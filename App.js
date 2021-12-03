@@ -32,6 +32,60 @@ const articlesData = [
     img: './assets/images/articlesImg.png',
     amount: 3,
   },
+  {
+    id: 4,
+    article: 'AC8435',
+    color: 'White',
+    size: 'S',
+    type: 'Longsleeve Women Y',
+    img: './assets/images/articlesImg.png',
+    amount: 3,
+  },
+  {
+    id: 5,
+    article: 'CG0934',
+    color: 'White',
+    size: 'Xl',
+    type: 'Longsleeve Women Z',
+    img: './assets/images/articlesImg.png',
+    amount: 3,
+  },
+  {
+    id: 6,
+    article: 'AC8435',
+    color: 'White',
+    size: 'S',
+    type: 'Longsleeve Women Y',
+    img: './assets/images/articlesImg.png',
+    amount: 3,
+  },
+  {
+    id: 7,
+    article: 'CG0934',
+    color: 'White',
+    size: 'Xl',
+    type: 'Longsleeve Women Z',
+    img: './assets/images/articlesImg.png',
+    amount: 3,
+  },
+  {
+    id: 8,
+    article: 'AC8435',
+    color: 'White',
+    size: 'S',
+    type: 'Longsleeve Women Y',
+    img: './assets/images/articlesImg.png',
+    amount: 3,
+  },
+  {
+    id: 9,
+    article: 'CG0934',
+    color: 'White',
+    size: 'Xl',
+    type: 'Longsleeve Women Z',
+    img: './assets/images/articlesImg.png',
+    amount: 3,
+  },
 ];
 
 const cartItemAmount = articlesData
@@ -40,7 +94,7 @@ const cartItemAmount = articlesData
 
 const App = () => {
   return (
-    <StyledSafeAreaView>
+    <StyledSafeAreaView bg={'white'} flex={1}>
       <Header amount={cartItemAmount} />
       <ArticlesList articlesData={articlesData} />
       <Footer />

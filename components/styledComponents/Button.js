@@ -1,24 +1,31 @@
 import styled from 'styled-components/native';
 import {margin, padding} from './mixins/mixins';
+import PropTypes, {string} from 'prop-types';
 
-export const StyledHeaderButton = styled.TouchableOpacity`
-  ${margin}
-`;
-export const StyledAmountButton = styled.TouchableOpacity`
-  ${margin};
-  border-radius: 40px;
-  background-color: green;
-  display: flex;
-  align-items: center;
-  width: 100px;
-  height: 15px;
-`;
-export const StyledBottomButton = styled.TouchableOpacity`
+export const StyledButton = styled.TouchableOpacity`
   ${margin};
   ${padding};
-  display: flex;
-  align-items: center;
-  border: 2px solid #678497;
-  border-radius: 6px;
-  width: 90%;
+  ${({backgroundColor}) =>
+    backgroundColor && `background-color: ${backgroundColor}`};
+  ${({display}) => display && `display: ${display}`};
+  ${({flexDirection}) => flexDirection && `flex-direction: ${flexDirection}`};
+  ${({justifyContent}) =>
+    justifyContent && `justify-content: ${justifyContent}`};
+  ${({alignItems}) => alignItems && `align-items: ${alignItems}`};
+  ${({width}) => width && `width: ${width}`};
+  ${({height}) => height && `height: ${height}`};
+  ${({borderRadius}) => borderRadius && `border-radius: ${borderRadius}`};
+  ${({border}) => border && `border: ${border}`};
 `;
+
+StyledButton.propTypes = {
+  backgroundColor: string,
+  display: string,
+  flexDirection: string,
+  justifyContent: string,
+  alignItems: string,
+  width: string,
+  height: string,
+  border: string,
+  borderRadius: string,
+};

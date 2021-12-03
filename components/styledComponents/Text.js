@@ -1,17 +1,20 @@
 import styled from 'styled-components/native';
 import {margin} from './mixins/mixins';
+import PropTypes, {string} from 'prop-types';
 
 export const StyledText = styled.Text`
   ${margin};
-  color: ${props => props.color};
-  font-size: ${props => props.fz};
-  font-weight: ${props => props.fw};
-  letter-spacing: -0.5px;
+  ${({color}) => color && `color: ${color}`};
+  ${({fontSize}) => fontSize && `font-size: ${fontSize}`};
+  ${({fontWeight}) => fontWeight && `font-weight: ${fontWeight}`};
+  ${({textAlign}) => textAlign && `text-align: ${textAlign}`};
+  ${({letterSpacing}) => letterSpacing && `letter-spacing: ${letterSpacing}`};
 `;
 
-export const StyledTitle = styled.Text`
-  ${margin};
-  color: ${props => props.color};
-  font-weight: 700;
-  font-size: 16px;
-`;
+StyledText.propTypes = {
+  color: string,
+  fontSize: string,
+  fontWeight: string,
+  textAlign: string,
+  letterSpacing: string,
+};

@@ -1,58 +1,63 @@
 import React from 'react';
 import Arrow from '../assets/icons/arrow.svg';
-import {
-  Block,
-  CartAreaItems,
-  ItemContainer,
-  StyledView,
-} from './styledComponents/Block';
+import {Block} from './styledComponents/Block';
 import {StyledText} from './styledComponents/Text';
-import {StyledAmountButton} from './styledComponents/Button';
+import {StyledButton} from './styledComponents/Button';
 import {ArticleImage} from './styledComponents/Image';
 
-export const ArticlesItem = ({el}) => {
+export const ArticlesItem = ({data}) => {
   return (
-    <ItemContainer>
+    <Block
+      display={'flex'}
+      flexDirection={'row'}
+      alignItems={'center'}
+      pt={'15px'}
+      pb={'15px'}
+      pl={'10px'}
+      pr={'5px'}
+      borderBottomWidth={'0.5px'}
+      borderBottomColor={'gray'}>
       <ArticleImage
         source={require('../assets/images/articlesImg.png')}
-        mt={'5px'}
-        mb={'5px'}
-        mr={'-35px'}
+        width={'70px'}
+        height={'70px'}
       />
-      <Block>
-        <StyledText fz={'12px'} color={'black'} fw={'500'} mt={'5px'}>
-          {el.article}
+      <Block flex={1} ml={'10px'}>
+        <StyledText color={'black'} fontWeight={'500'} mt={'5px'}>
+          {data.article}
         </StyledText>
-        <CartAreaItems>
-          <StyledText fz={'12px'} color={'black'} fw={'500'} mt={'5px'}>
-            {el.color}
+        <Block display={'flex'} flexDirection={'row'}>
+          <StyledText color={'black'} fontWeight={'500'} mt={'5px'}>
+            {data.color}
           </StyledText>
-          <StyledText
-            fz={'12px'}
-            color={'black'}
-            fw={'500'}
-            mt={'5px'}
-            ml={'25px'}>
-            {el.size}
+          <StyledText color={'black'} fontWeight={'500'} mt={'5px'} ml={'25px'}>
+            {data.size}
           </StyledText>
-        </CartAreaItems>
-        <StyledText
-          fz={'12px'}
-          color={'#a9acb0'}
-          fw={'400'}
-          mt={'5px'}
-          mb={'5px'}>
-          {el.type}
+        </Block>
+        <StyledText color={'#a9acb0'} fw={'400'} mt={'8px'}>
+          {data.type}
         </StyledText>
       </Block>
-      <StyledView mr={'-15px'}>
-        <StyledAmountButton mr={'10px'}>
-          <StyledText fz={'12px'} color={'white'} fw={'700'}>
-            {el.amount}
+      <Block
+        display={'flex'}
+        flexDirection={'row'}
+        justifyContent={'space-around'}
+        ml={'25px'}>
+        <StyledButton
+          display={'flex'}
+          alignItems={'center'}
+          justifyContent={'center'}
+          width={'100px'}
+          height={'15px'}
+          borderRadius={'6px'}
+          backgroundColor={'green'}
+          mr={'15px'}>
+          <StyledText fontSize={'12px'} color={'white'} fontWeight={'700'}>
+            {data.amount}
           </StyledText>
-        </StyledAmountButton>
+        </StyledButton>
         <Arrow width={15} height={15} fill={'#000'} />
-      </StyledView>
-    </ItemContainer>
+      </Block>
+    </Block>
   );
 };

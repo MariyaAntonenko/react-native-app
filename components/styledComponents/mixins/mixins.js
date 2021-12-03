@@ -14,6 +14,3 @@ export const padding = css`
   ${({pl}) => pl && `padding-left: ${pl}`}
   ${({pr}) => pr && `padding-right: ${pr}`}
 `;
-export const bgColor = css`
-  ${({bg}) => bg && `background-color: ${bg}`}
-`;

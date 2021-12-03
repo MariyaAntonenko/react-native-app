@@ -1,53 +1,68 @@
 import styled from 'styled-components/native';
-import {margin, padding, bgColor} from './mixins/mixins';
+import {margin, padding} from './mixins/mixins';
+import PropTypes, {string, number} from 'prop-types';
 
 export const StyledSafeAreaView = styled.SafeAreaView`
   ${margin};
   ${padding};
-  background-color: white;
-  flex: 1;
+  ${({backgroundColor}) =>
+    backgroundColor && `background-color: ${backgroundColor}`};
+  ${({flex}) => flex && `flex: ${flex}`};
 `;
-
 export const Block = styled.View`
   ${margin};
   ${padding};
-  display: flex;
-  flex-direction: column;
+  ${({backgroundColor}) =>
+    backgroundColor && `background-color: ${backgroundColor}`};
+  ${({display}) => display && `display: ${display}`};
+  ${({flex}) => flex && `flex: ${flex}`};
+  ${({flexDirection}) => flexDirection && `flex-direction: ${flexDirection}`};
+  ${({justifyContent}) =>
+    justifyContent && `justify-content: ${justifyContent}`};
+  ${({alignItems}) => alignItems && `align-items: ${alignItems}`};
+  ${({width}) => width && `width: ${width}`};
+  ${({height}) => height && `height: ${height}`};
+  ${({position}) => position && `position: ${position}`};
+  ${({top}) => top && `top: ${top}`};
+  ${({left}) => left && `left: ${left}`};
+  ${({right}) => right && `right: ${right}`};
+  ${({bottom}) => bottom && `bottom: ${bottom}`};
+  ${({border}) => border && `border: ${border}`};
+  ${({borderRadius}) => borderRadius && `border-radius: ${borderRadius}`};
+  ${({borderBottomWidth}) =>
+    borderBottomWidth && `border-bottom-width: ${borderBottomWidth}`};
+  ${({borderBottomStyle}) =>
+    borderBottomStyle && `border-bottom-style: ${borderBottomStyle}`};
+  ${({borderBottomColor}) =>
+    borderBottomColor && `border-bottom-color: ${borderBottomColor}`};
+  ${({borderTopWidth}) =>
+    borderTopWidth && `border-top-width: ${borderTopWidth}`};
+  ${({borderTopStyle}) =>
+    borderTopStyle && `border-top-style: ${borderTopStyle}`};
+  ${({borderTopColor}) =>
+    borderTopColor && `border-top-color: ${borderTopColor}`};
 `;
 
-export const StyledView = styled.View`
-  ${margin};
-  ${padding};
-  ${bgColor};
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-`;
-export const CartArea = styled.View`
-  ${padding};
-  border: 0.5px solid gray;
-`;
-export const CartAreaItems = styled.View`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-export const ItemContainer = styled.View`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  border-bottom-width: 0.5px;
-  border-bottom-style: solid;
-  border-bottom-color: gray;
-`;
-export const FooterContainer = styled.View`
-  ${margin};
-  ${padding};
-  position: relative;
-  bottom: 0;
-  border-top-width: 0.5px;
-  border-top-style: solid;
-  border-top-color: gray;
-`;
+Block.propTypes = {
+  backgroundColor: string,
+  display: string,
+  flex: number,
+  flexDirection: string,
+  justifyContent: string,
+  alignItems: string,
+  width: string,
+  height: string,
+  position: string,
+  top: string,
+  left: string,
+  right: string,
+  bottom: string,
+  border: string,
+  borderRadius: string,
+  borderBottomWidth: string,
+  borderBottomStyle: string,
+  borderBottomColor: string,
+  borderTopWidth: string,
+  borderTopStyle: string,
+  borderTopColor: string,
+};

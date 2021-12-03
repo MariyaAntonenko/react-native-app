@@ -12,8 +12,10 @@
   "dependencies": {
     "react": "17.0.2",
     "react-native": "0.66.3",
+    "react-native-segmented-control-tab": "^4.0.0",
     "react-native-svg": "^12.1.1",
     "react-native-svg-transformer": "^0.14.3",
+    "react-native-swipe-list-view": "^3.2.9",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
