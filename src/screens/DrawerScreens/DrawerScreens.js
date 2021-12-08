@@ -7,7 +7,7 @@ const Drawer = createDrawerNavigator();
 
 export const DrawerScreens = () => {
   return (
-    <Drawer.Navigator initialRouteName={ArticlesScreen}>
+    <Drawer.Navigator>
       <Drawer.Screen
         name="Articles in carton"
         component={ArticlesScreen}

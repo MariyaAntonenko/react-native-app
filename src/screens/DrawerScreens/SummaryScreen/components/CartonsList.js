@@ -1,13 +1,12 @@
 import React, {useCallback} from 'react';
-import {CartonsItem} from './CartonsItem';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledText} from '../../../../common/simpleComponents/Text';
-import {SwipeList} from '../../SwipeList';
+import {SwipeList} from '../../../../common/complicatedComponents/SwipeList';
 import {cartonsData} from '../../../../common/consts';
+import {CartonsItem} from './CartonsItem';
 
 export const CartonsList = () => {
   const renderItem = useCallback(({item}) => <CartonsItem data={item} />, []);
-  const handleKey = useCallback(item => item.id, []);
   return (
     <Block backgroundColor={'white'} flex={1}>
       <Block
@@ -30,11 +29,7 @@ export const CartonsList = () => {
         </StyledText>
       </Block>
       <Block backgroundColor={'white'} flex={1}>
-        <SwipeList
-          data={cartonsData}
-          handleKey={handleKey}
-          renderItem={renderItem}
-        />
+        <SwipeList data={cartonsData} renderItem={renderItem} />
       </Block>
     </Block>
   );
