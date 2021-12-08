@@ -2,13 +2,6 @@ import styled from 'styled-components/native';
 import {margin, padding} from './mixins/mixins';
 import PropTypes, {string, number} from 'prop-types';
 
-export const StyledSafeAreaView = styled.SafeAreaView`
-  ${margin};
-  ${padding};
-  ${({backgroundColor}) =>
-    backgroundColor && `background-color: ${backgroundColor}`};
-  ${({flex}) => flex && `flex: ${flex}`};
-`;
 export const Block = styled.View`
   ${margin};
   ${padding};
@@ -41,6 +34,7 @@ export const Block = styled.View`
     borderTopStyle && `border-top-style: ${borderTopStyle}`};
   ${({borderTopColor}) =>
     borderTopColor && `border-top-color: ${borderTopColor}`};
+  ${({boxShadow}) => boxShadow && `box-shadow: ${boxShadow}`};
 `;
 
 Block.propTypes = {
@@ -65,4 +59,5 @@ Block.propTypes = {
   borderTopWidth: string,
   borderTopStyle: string,
   borderTopColor: string,
+  boxShadow: string,
 };

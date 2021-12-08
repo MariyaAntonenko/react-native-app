@@ -1,13 +1,12 @@
 import React from 'react';
-import Box from '../assets/icons/box.svg';
-import Coupon from '../assets/icons/coupon.svg';
-import {Block} from './styledComponents/Block';
-import {StyledText} from './styledComponents/Text';
-import {headerConsts} from './headerConsts';
+import Box from '../../../assets/icons/box.svg';
+import Coupon from '../../../assets/icons/coupon.svg';
+import {Block} from '../../simpleComponents/Block';
+import {StyledText} from '../../simpleComponents/Text';
 import {HeaderItem} from './HeaderItem';
-import {SegmentControls} from './SegmentTab';
+import {articlesAmount, cartonsAmount} from '../../consts';
 
-export const Header = ({amount}) => {
+export const Header = ({headerConsts}) => {
   return (
     <Block mt={'15px'}>
       <Block
@@ -20,7 +19,7 @@ export const Header = ({amount}) => {
       </Block>
       <Block>
         <Block
-          backgroundColor={'#dadde0'}
+          backgroundColor={'#E1E1E1'}
           display={'flex'}
           flexDirection={'row'}
           justifyContent={'space-between'}
@@ -46,7 +45,7 @@ export const Header = ({amount}) => {
               fontWeight={'300'}
               mr={'10px'}
               ml={'5px'}>
-              {amount}
+              {cartonsAmount}
             </StyledText>
             <Coupon width={30} height={30} fill={'#000'} />
             <StyledText
@@ -54,28 +53,9 @@ export const Header = ({amount}) => {
               color={'black'}
               fontWeight={'300'}
               mr={'5px'}>
-              {amount}
+              {articlesAmount}
             </StyledText>
           </Block>
-        </Block>
-        <SegmentControls />
-        <Block
-          display={'flex'}
-          flexDirection={'row'}
-          justifyContent={'space-between'}
-          pt={'20px'}
-          pb={'15px'}
-          pr={'80px'}
-          pl={'30px'}
-          borderBottomColor={'gray'}
-          borderBottomStyle={'solid'}
-          borderBottomWidth={'0.5px'}>
-          <StyledText fontSize={'15px'} color={'gray'} fontWeight={'400'}>
-            ARTICLE NO.
-          </StyledText>
-          <StyledText fontSize={'15px'} color={'gray'} fontWeight={'400'}>
-            ACT.
-          </StyledText>
         </Block>
       </Block>
     </Block>

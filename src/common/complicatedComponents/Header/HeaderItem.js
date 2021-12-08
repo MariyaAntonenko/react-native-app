@@ -1,7 +1,7 @@
 import React from 'react';
-import {Block} from './styledComponents/Block';
-import {StyledText} from './styledComponents/Text';
-import {StyledButton} from './styledComponents/Button';
+import {Block} from '../../simpleComponents/Block';
+import {StyledText} from '../../simpleComponents/Text';
+import {StyledButton} from '../../simpleComponents/Button';
 
 export const HeaderItem = ({Icon, extraText, label, clickable}) => {
   return (
@@ -19,7 +19,7 @@ export const HeaderItem = ({Icon, extraText, label, clickable}) => {
           <StyledText
             color={'#3490FD'}
             mt={'15px'}
-            mr={'30px'}
+            mr={'10px'}
             fontSize={'17px'}
             fontWeight={'700'}>
             {label}
@@ -30,6 +30,7 @@ export const HeaderItem = ({Icon, extraText, label, clickable}) => {
           color={'black'}
           mt={'15px'}
           ml={'5px'}
+          mr={'10px'}
           fontWeight={'700'}
           fontSize={'16px'}>
           {label}

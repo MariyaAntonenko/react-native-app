@@ -1,10 +1,11 @@
 import styled from 'styled-components/native';
 import {margin, padding} from './mixins/mixins';
-import PropTypes, {string} from 'prop-types';
+import PropTypes, {number, string} from 'prop-types';
 
 export const StyledButton = styled.TouchableOpacity`
   ${margin};
   ${padding};
+  ${({flex}) => flex && `flex: ${flex}`};
   ${({backgroundColor}) =>
     backgroundColor && `background-color: ${backgroundColor}`};
   ${({display}) => display && `display: ${display}`};
@@ -16,9 +17,12 @@ export const StyledButton = styled.TouchableOpacity`
   ${({height}) => height && `height: ${height}`};
   ${({borderRadius}) => borderRadius && `border-radius: ${borderRadius}`};
   ${({border}) => border && `border: ${border}`};
+  ${({boxShadow}) => boxShadow && `box-shadow: ${boxShadow}`};
+  ${({outline}) => outline && `border: ${outline}`};
 `;
 
 StyledButton.propTypes = {
+  flex: number,
   backgroundColor: string,
   display: string,
   flexDirection: string,
@@ -28,4 +32,6 @@ StyledButton.propTypes = {
   height: string,
   border: string,
   borderRadius: string,
+  boxShadow: string,
+  outline: string,
 };
