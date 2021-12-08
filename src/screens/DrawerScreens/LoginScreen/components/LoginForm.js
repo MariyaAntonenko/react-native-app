@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import {Input} from '../../../../common/simpleComponents/Input';
@@ -7,6 +7,10 @@ import ShowPassword from '../../../../assets/icons/showPassword.svg';
 import HidePassword from '../../../../assets/icons/hidePassword.svg';
 
 export const LoginForm = () => {
+  const [issSecureEntry, setSecureEntry] = useState(true);
+  const onTogglePassword = () => {
+    setSecureEntry(prev => !prev);
+  };
   return (
     <>
       <Block
@@ -32,8 +36,27 @@ export const LoginForm = () => {
           flexDirection={'row'}
           justifyContent={'space-between'}
           alignItems={'center'}>
-          <Input mt={'15px'} fontSize={'15px'} width={'90%'} />
-          <ShowPassword width={20} height={20} fill={'#D1D1D1'} />
+          <Input
+            mt={'15px'}
+            fontSize={'15px'}
+            width={'90%'}
+            secureTextEntry={issSecureEntry}
+          />
+          {issSecureEntry ? (
+            <ShowPassword
+              width={40}
+              height={30}
+              fill={'#D1D1D1'}
+              onPress={onTogglePassword}
+            />
+          ) : (
+            <HidePassword
+              width={40}
+              height={30}
+              fill={'#D1D1D1'}
+              onPress={onTogglePassword}
+            />
+          )}
         </Block>
       </Block>
       <StyledButton
