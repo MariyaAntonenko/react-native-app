@@ -1,13 +1,16 @@
 import React from 'react';
-import {LoginScreenTopSection} from './components/LoginScreenTopSection';
-import {Block} from '../../../common/simpleComponents/Block';
-import {LoginScreenBottomSection} from './components/LoginScreenBottomSection';
+import {LoginScreenItemsContainer} from './components/LoginScreenItemsContainer';
+import {Platform, Keyboard, TouchableWithoutFeedback} from 'react-native';
+import {StyledKeyboardAvoidingView} from '../../../common/simpleComponents/KeyboardAvoidingView';
 
 export const LoginScreen = () => {
   return (
-    <Block flex={1}>
-      <LoginScreenTopSection />
-      <LoginScreenBottomSection />
-    </Block>
+    <StyledKeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : null}
+      flex={1}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <LoginScreenItemsContainer />
+      </TouchableWithoutFeedback>
+    </StyledKeyboardAvoidingView>
   );
 };

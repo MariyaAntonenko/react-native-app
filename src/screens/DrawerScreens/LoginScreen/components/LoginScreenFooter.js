@@ -1,13 +1,11 @@
 import React from 'react';
-import {Block} from '../../../../common/simpleComponents/Block';
-import {StyledText} from '../../../../common/simpleComponents/Text';
-import {LoginForm} from './LoginForm';
 import {StyledButton} from '../../../../common/simpleComponents/Button';
+import {StyledText} from '../../../../common/simpleComponents/Text';
+import {Block} from '../../../../common/simpleComponents/Block';
 
-export const LoginScreenBottomSection = () => {
+export const LoginScreenFooter = () => {
   return (
-    <Block display={'flex'} padding={'10%'}>
-      <LoginForm />
+    <Block flex={1}>
       <StyledButton
         display={'flex'}
         alignItems={'center'}

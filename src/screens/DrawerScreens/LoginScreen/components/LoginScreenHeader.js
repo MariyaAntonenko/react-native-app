@@ -3,11 +3,12 @@ import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import Register from '../../../../assets/icons/register.svg';
 
-export const LoginScreenTopSection = () => {
+export const LoginScreenHeader = () => {
   return (
     <Block
+      padding={'10%'}
+      flex={1}
       backgroundColor={'#ED993E'}
-      height={'40%'}
       display={'flex'}
       alignItems={'center'}
       justifyContent={'center'}>
