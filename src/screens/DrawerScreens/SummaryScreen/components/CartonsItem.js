@@ -18,7 +18,7 @@ export const CartonsItem = ({data}) => {
       borderBottomWidth={'0.5px'}
       borderBottomColor={'gray'}>
       <Block flex={1} ml={'10px'}>
-        <StyledText color={'black'} fontWeight={'500'} mt={'5px'}>
+        <StyledText color={'black'} fontWeight={'500'}>
           {data.article}
         </StyledText>
       </Block>
@@ -32,7 +32,6 @@ export const CartonsItem = ({data}) => {
           alignItems={'center'}
           justifyContent={'center'}
           width={'100px'}
-          height={'15px'}
           borderRadius={'6px'}
           backgroundColor={'gray'}
           mr={'15px'}>

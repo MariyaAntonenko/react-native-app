@@ -10,8 +10,7 @@ export const TabBar = ({state, descriptors, navigation}) => {
       flexDirection={'row'}
       justifyContent={'space-around'}
       alignItems={'center'}
-      borderRadius={'8px'}
-      height={'40px'}>
+      borderRadius={'8px'}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
         const label =
@@ -55,7 +54,7 @@ export const TabBar = ({state, descriptors, navigation}) => {
             borderRadius={isFocused ? '8px' : '0'}
             boxShadow={isFocused ? '0 0 10px rgba(0,0,0,0.5)' : 'none'}
             display={'flex'}
-            height={'40px'}
+            padding={'2%'}
             width={'50%'}
             border={isFocused ? '0.5px solid #EDEDED' : 'none'}
             backgroundColor={isFocused ? 'white' : '#EDEDED'}>

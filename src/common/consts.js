@@ -6,7 +6,7 @@ import Cloud from '../assets/icons/cloud.svg';
 export const articlesData = [
   {
     id: 1,
-    article: 'CG0934',
+    article: '1',
     color: 'White',
     size: 'XS',
     type: 'Longsleeve Women X',
@@ -15,7 +15,7 @@ export const articlesData = [
   },
   {
     id: 2,
-    article: 'AC8435',
+    article: '2',
     color: 'White',
     size: 'S',
     type: 'Longsleeve Women Y',
@@ -24,7 +24,7 @@ export const articlesData = [
   },
   {
     id: 3,
-    article: 'CG0934',
+    article: '3',
     color: 'White',
     size: 'Xl',
     type: 'Longsleeve Women Z',
@@ -33,7 +33,7 @@ export const articlesData = [
   },
   {
     id: 4,
-    article: 'AC8435',
+    article: '4',
     color: 'White',
     size: 'S',
     type: 'Longsleeve Women Y',
@@ -42,7 +42,7 @@ export const articlesData = [
   },
   {
     id: 5,
-    article: 'CG0934',
+    article: '5',
     color: 'White',
     size: 'Xl',
     type: 'Longsleeve Women Z',
@@ -51,7 +51,7 @@ export const articlesData = [
   },
   {
     id: 6,
-    article: 'AC8435',
+    article: '6',
     color: 'White',
     size: 'S',
     type: 'Longsleeve Women Y',
@@ -60,7 +60,7 @@ export const articlesData = [
   },
   {
     id: 7,
-    article: 'CG0934',
+    article: '7',
     color: 'White',
     size: 'Xl',
     type: 'Longsleeve Women Z',
@@ -69,7 +69,7 @@ export const articlesData = [
   },
   {
     id: 8,
-    article: 'AC8435',
+    article: '8',
     color: 'White',
     size: 'S',
     type: 'Longsleeve Women Y',
@@ -78,7 +78,7 @@ export const articlesData = [
   },
   {
     id: 9,
-    article: 'CG0934',
+    article: '9',
     color: 'White',
     size: 'Xl',
     type: 'Longsleeve Women Z',
@@ -163,6 +163,9 @@ export const headerConstsForSummaryScreen = [
     clickable: true,
   },
 ];
+
+export const articlesSecondaryHeaderName = 'ARTICLES';
+export const cartonsSecondaryHeaderName = 'CARTONS';
 
 export const footerConstsForArticlesScreen = {
   title: 'Pull the trigger to start reading.',

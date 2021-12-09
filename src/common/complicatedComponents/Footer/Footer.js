@@ -7,9 +7,7 @@ export const Footer = ({footerConst}) => {
   return (
     <Block
       backgroundColor={'white'}
-      pr={'2%'}
-      pl={'2%'}
-      height={'15%'}
+      padding={'5%'}
       display={'flex'}
       justifyContent={'center'}
       alignItems={'center'}
