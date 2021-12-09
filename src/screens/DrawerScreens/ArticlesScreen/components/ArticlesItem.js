@@ -24,20 +24,26 @@ export const ArticlesItem = ({data}) => {
         height={'70px'}
       />
       <Block flex={1} ml={'10px'}>
-        <StyledText color={'black'} fontWeight={'500'} mt={'5px'}>
+        <StyledText color={'black'} fontWeight={'500'}>
           {data.article}
         </StyledText>
-        <Block display={'flex'} flexDirection={'row'}>
-          <StyledText color={'black'} fontWeight={'500'} mt={'5px'}>
+        <Block
+          display={'flex'}
+          flexDirection={'row'}
+          mt={'5px'}
+          alignItems={'center'}>
+          <StyledText color={'black'} fontWeight={'500'}>
             {data.color}
           </StyledText>
-          <StyledText color={'black'} fontWeight={'500'} mt={'5px'} ml={'25px'}>
+          <StyledText color={'black'} fontWeight={'500'} ml={'25px'}>
             {data.size}
           </StyledText>
         </Block>
-        <StyledText color={'#a9acb0'} fw={'400'} mt={'8px'}>
-          {data.type}
-        </StyledText>
+        <Block pt={'5px'}>
+          <StyledText color={'#a9acb0'} fw={'400'}>
+            {data.type}
+          </StyledText>
+        </Block>
       </Block>
       <Block
         display={'flex'}
@@ -49,7 +55,7 @@ export const ArticlesItem = ({data}) => {
           alignItems={'center'}
           justifyContent={'center'}
           width={'100px'}
-          height={'15px'}
+          padding={'1px'}
           borderRadius={'6px'}
           backgroundColor={'green'}
           mr={'15px'}>
