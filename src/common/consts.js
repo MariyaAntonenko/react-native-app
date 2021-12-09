@@ -164,6 +164,9 @@ export const headerConstsForSummaryScreen = [
   },
 ];
 
+export const articlesSecondaryHeaderName = 'ARTICLES';
+export const cartonsSecondaryHeaderName = 'CARTONS';
+
 export const footerConstsForArticlesScreen = {
   title: 'Pull the trigger to start reading.',
 };
