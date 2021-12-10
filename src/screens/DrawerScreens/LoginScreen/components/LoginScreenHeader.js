@@ -6,7 +6,7 @@ import Register from '../../../../assets/icons/register.svg';
 export const LoginScreenHeader = () => {
   return (
     <Block
-      padding={'10%'}
+      padding={'9%'}
       flex={1}
       backgroundColor={'#ED993E'}
       display={'flex'}

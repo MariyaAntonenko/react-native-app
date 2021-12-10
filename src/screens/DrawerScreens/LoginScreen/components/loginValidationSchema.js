@@ -1,15 +1,14 @@
 import * as yup from 'yup';
-import {ValidationError} from 'yup';
 
 export const currentErrors = [
-  'Minimum 7 characters, ',
-  '1 special symbol, ',
-  '1 digit, ',
-  '1 uppercase letter, ',
-  '1 lowercase letter, ',
-  'do not repeat',
+  '1 uppercase letter',
+  '1 lowercase letter',
+  '1 number',
+  '1 special symbol',
+  'Do not repeat',
+  'Minimum 7 characters',
+  'Required',
 ];
-
 export const loginValidationSchema = yup.object().shape({
   username: yup
     .string()
@@ -19,23 +18,45 @@ export const loginValidationSchema = yup.object().shape({
   password: yup
     .string()
     .required('Required')
-    .matches(
-      /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-      [
-        'Minimum 7 characters, ',
-        '1 special symbol, ',
-        '1 digit, ',
-        '1 uppercase letter, ',
-        '1 lowercase letter, ',
-        'do not repeat',
-      ],
-    )
-    // .matches(/^.*(?=.{7,}).*$/, 'Minimum 7 characters')
-    // .matches(/^.*((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1}).*$/, '1 special symbol')
-    // .matches(/^.*(?=.*\d).*$/, '1 digit')
-    // .matches(/^(?=.*[A-Z])/, '1 uppercase letter')
-    // .matches(/^(?=.*[a-z])/, '1 lowercase letter')
-    // .matches(/^(?!.*(.)\1+).*$/, 'do not repeat')
-    .trim(),
+    .test('Uppercase-test', '1 uppercase letter', function (value) {
+      const uppercaseRegex = /^(?=.*[A-Z])/;
+      let isValidPassword = uppercaseRegex.test(value);
+      if (!isValidPassword) {
+        return false;
+      }
+      return true;
+    })
+    .test('Lowercase-test', '1 lowercase letter', function (value) {
+      const lowercaseRegex = /^(?=.*[a-z])/;
+      let isValidPassword = lowercaseRegex.test(value);
+      if (!isValidPassword) {
+        return false;
+      }
+      return true;
+    })
+    .test('number-test', '1 number', function (value) {
+      const numberRegex = /^.*(?=.*\d).*$/;
+      let isValidPassword = numberRegex.test(value);
+      if (!isValidPassword) {
+        return false;
+      }
+      return true;
+    })
+    .test('Special-test', '1 special symbol', function (value) {
+      const specialRegex = /^.*((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1}).*$/;
+      let isValidPassword = specialRegex.test(value);
+      if (!isValidPassword) {
+        return false;
+      }
+      return true;
+    })
+    .test('repeat-test', 'Do not repeat', function (value) {
+      const repeatRegex = /^(?!.*(.)\1+).*$/;
+      let isValidPassword = repeatRegex.test(value);
+      if (!isValidPassword) {
+        return false;
+      }
+      return true;
+    })
+    .min(7, 'Minimum 7 characters'),
 });
-console.log(ValidationError);

@@ -14,8 +14,9 @@ export const LoginForm = () => {
   const onTogglePassword = () => {
     setSecureEntry(prev => !prev);
   };
-  const onSubmitForm = data => {
+  const onSubmitForm = (data, {resetForm}) => {
     console.log(data);
+    resetForm();
   };
   return (
     <Block pt={'10%'} pl={'10%'} pr={'10%'}>
@@ -38,7 +39,7 @@ export const LoginForm = () => {
         }) => (
           <>
             <Block
-              pb={'10px'}
+              pb={'2%'}
               borderBottomWidth={'1px'}
               borderBottomColor={'#D1D1D1'}
               justifyContent={'flex-end'}>
@@ -49,7 +50,7 @@ export const LoginForm = () => {
                 onChangeText={handleChange('username')}
                 onBlur={handleBlur('username')}
                 value={values.username}
-                mt={'15px'}
+                mt={'7%'}
                 fontSize={'15px'}
               />
             </Block>
@@ -59,11 +60,11 @@ export const LoginForm = () => {
               </Block>
             )}
             <Block
-              pr={'10px'}
-              mt={'25px'}
+              pr={'1%'}
+              mt={'10%'}
               borderBottomWidth={'1px'}
               borderBottomColor={'#D1D1D1'}
-              pb={'10px'}>
+              pb={'2%'}>
               <StyledText color={'#D1D1D1'} fontSize={'15px'}>
                 PASSWORD
               </StyledText>
@@ -76,7 +77,7 @@ export const LoginForm = () => {
                   onChangeText={handleChange('password')}
                   onBlur={handleBlur('password')}
                   value={values.password}
-                  mt={'15px'}
+                  mt={'7%'}
                   fontSize={'15px'}
                   width={'90%'}
                   secureTextEntry={issSecureEntry}
@@ -99,16 +100,22 @@ export const LoginForm = () => {
               </Block>
             </Block>
             {errors.password && touched.password && (
-              <Block flex={1} mt={'1%'}>
-                <StyledText color={'red'}>
-                  {currentErrors.filter(err => err !== errors.password)}
-                </StyledText>
+              <Block mt={'1%'}>
+                {currentErrors.map((err, idx) => {
+                  return (
+                    <StyledText
+                      color={err === errors.password ? 'red' : 'gray'}
+                      key={idx}>
+                      {err}
+                    </StyledText>
+                  );
+                })}
               </Block>
             )}
             <StyledButton
               disabled={!isValid}
               onPress={handleSubmit}
-              mt={'20px'}
+              mt={'10%'}
               backgroundColor={isValid ? '#013556' : 'gray'}
               height={'55px'}
               display={'flex'}
