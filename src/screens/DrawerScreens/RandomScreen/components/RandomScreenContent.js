@@ -3,7 +3,7 @@ import Wifi from '../../../../assets/icons/wifi.svg';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 
-export const RandomScreenContent = ({randomValue, handleRandomValue}) => {
+export const RandomScreenContent = ({count}) => {
   return (
     <Block
       flex={1}
@@ -11,9 +11,9 @@ export const RandomScreenContent = ({randomValue, handleRandomValue}) => {
       justifyContent={'space-around'}
       alignItems={'center'}>
       <StyledText fontSize={'150px'} color={'#013555'}>
-        {randomValue}
+        {count}
       </StyledText>
-      <Wifi width={200} height={200} onPress={handleRandomValue} />
+      <Wifi width={200} height={200} />
     </Block>
   );
 };
