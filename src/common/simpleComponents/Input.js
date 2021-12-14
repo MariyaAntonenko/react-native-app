@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
-import {border, margin, padding} from './mixins/mixins';
+import {marginMixins, paddingMixins, borderMixins} from './mixins/mixins';
 import PropTypes, {number, string} from 'prop-types';
 
 export const Input = styled.TextInput`
-  ${margin};
-  ${padding};
-  ${border}
+  ${marginMixins};
+  ${paddingMixins};
+  ${borderMixins}
   ${({backgroundColor}) =>
     backgroundColor && `background-color: ${backgroundColor}`};
   ${({width}) => width && `width: ${width}`};

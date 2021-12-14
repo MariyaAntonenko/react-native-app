@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
-import {margin} from './mixins/mixins';
+import {marginMixins} from './mixins/mixins';
 import PropTypes, {string} from 'prop-types';
 
 export const StyledText = styled.Text`
-  ${margin};
+  ${marginMixins};
   ${({color}) => color && `color: ${color}`};
   ${({fontSize}) => fontSize && `font-size: ${fontSize}`};
   ${({fontWeight}) => fontWeight && `font-weight: ${fontWeight}`};

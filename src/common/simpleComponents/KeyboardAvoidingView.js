@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 import PropTypes, {number, string} from 'prop-types';
-import {margin} from './mixins/mixins';
+import {marginMixins} from './mixins/mixins';
 
 export const StyledKeyboardAvoidingView = styled.KeyboardAvoidingView`
-  ${margin};
+  ${marginMixins};
   ${({flex}) => flex && `flex: ${flex}`};
   ${({height}) => height && `height: ${height}`};
 `;

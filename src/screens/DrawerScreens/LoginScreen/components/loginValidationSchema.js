@@ -18,6 +18,14 @@ export const loginValidationSchema = yup.object().shape({
   password: yup
     .string()
     .required('Required')
+    .test('repeat-test', 'Do not repeat', function (value) {
+      const repeatRegex = /^(?!.*(.)\1+).*$/;
+      let isValidPassword = repeatRegex.test(value);
+      if (!isValidPassword) {
+        return false;
+      }
+      return true;
+    })
     .test('Uppercase-test', '1 uppercase letter', function (value) {
       const uppercaseRegex = /^(?=.*[A-Z])/;
       let isValidPassword = uppercaseRegex.test(value);
@@ -50,13 +58,6 @@ export const loginValidationSchema = yup.object().shape({
       }
       return true;
     })
-    .test('repeat-test', 'Do not repeat', function (value) {
-      const repeatRegex = /^(?!.*(.)\1+).*$/;
-      let isValidPassword = repeatRegex.test(value);
-      if (!isValidPassword) {
-        return false;
-      }
-      return true;
-    })
+
     .min(7, 'Minimum 7 characters'),
 });

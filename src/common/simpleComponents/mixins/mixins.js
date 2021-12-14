@@ -1,21 +1,21 @@
 import {css} from 'styled-components';
 import {string} from 'prop-types';
 
-export const margin = css`
+export const marginMixins = css`
   ${({margin}) => margin && `margin: ${margin}`}
   ${({mt}) => mt && `margin-top: ${mt}`}
   ${({mb}) => mb && `margin-bottom: ${mb}`}
   ${({ml}) => ml && `margin-left: ${ml}`}
   ${({mr}) => mr && `margin-right: ${mr}`}
 `;
-export const padding = css`
+export const paddingMixins = css`
   ${({padding}) => padding && `padding: ${padding}`}
   ${({pt}) => pt && `padding-top: ${pt}`}
   ${({pb}) => pb && `padding-bottom: ${pb}`}
   ${({pl}) => pl && `padding-left: ${pl}`}
   ${({pr}) => pr && `padding-right: ${pr}`}
 `;
-export const border = css`
+export const borderMixins = css`
   ${({border}) => border && `border: ${border}`};
   ${({borderRadius}) => borderRadius && `border-radius: ${borderRadius}`};
   ${({borderBottomWidth}) =>
@@ -31,7 +31,7 @@ export const border = css`
   ${({borderTopColor}) =>
     borderTopColor && `border-top-color: ${borderTopColor}`};
 `;
-border.propTypes = {
+borderMixins.propTypes = {
   border: string,
   borderRadius: string,
   borderBottomWidth: string,
@@ -41,14 +41,14 @@ border.propTypes = {
   borderTopStyle: string,
   borderTopColor: string,
 };
-margin.propTypes = {
+marginMixins.propTypes = {
   margin: string,
   mt: string,
   mb: string,
   mr: string,
   ml: string,
 };
-padding.propTypes = {
+paddingMixins.propTypes = {
   padding: string,
   pt: string,
   pb: string,
