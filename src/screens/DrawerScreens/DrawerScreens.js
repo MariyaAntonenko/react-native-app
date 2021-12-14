@@ -3,6 +3,7 @@ import {ArticlesScreen} from './ArticlesScreen/ArticlesScreen';
 import {SummaryScreen} from './SummaryScreen/SummaryScreen';
 import {LoginScreen} from './LoginScreen/LoginScreen';
 import {ChartScreen} from './ChartScreen/ChartScreen';
+import {RandomScreen} from './RandomScreen/RandomScreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();
@@ -29,6 +30,11 @@ export const DrawerScreens = () => {
         name="Chart"
         options={{headerShown: false}}
         component={ChartScreen}
+      />
+      <Drawer.Screen
+        name="Random"
+        options={{headerShown: false}}
+        component={RandomScreen}
       />
     </Drawer.Navigator>
   );

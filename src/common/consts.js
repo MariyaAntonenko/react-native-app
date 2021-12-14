@@ -121,8 +121,10 @@ export const headerConstsForArticlesScreen = [
     id: 1,
     Icon: () => <Bluetooth width={50} height={40} fill={'#000'} />,
     extraText: '100%',
+    extraTextColor: 'black',
     label: 'Cancel',
     clickable: true,
+    textColor: '#3490FD',
   },
   {
     id: 2,
@@ -130,6 +132,7 @@ export const headerConstsForArticlesScreen = [
     extraText: '',
     label: 'Articles in Carton',
     clickable: false,
+    textColor: 'black',
   },
   {
     id: 3,
@@ -137,16 +140,46 @@ export const headerConstsForArticlesScreen = [
     extraText: '',
     label: 'Confirm',
     clickable: true,
+    textColor: '#3490FD',
   },
 ];
 
+export const headerConstsForRandomPage = [
+  {
+    id: 1,
+    Icon: () => <Bluetooth width={50} height={40} fill={'#fff'} />,
+    extraText: '100%',
+    extraTextColor: 'white',
+    label: 'Back',
+    clickable: true,
+    textColor: 'white',
+  },
+  {
+    id: 2,
+    Icon: () => <Wifi width={100} height={40} fill={'#ffff'} />,
+    extraText: '',
+    label: 'Articles in Carton',
+    clickable: false,
+    textColor: 'white',
+  },
+  {
+    id: 3,
+    Icon: () => <Cloud width={60} height={40} fill={'#fff'} />,
+    extraText: '',
+    label: 'Confirm',
+    clickable: true,
+    textColor: 'white',
+  },
+];
 export const headerConstsForSummaryScreen = [
   {
     id: 1,
     Icon: () => <Bluetooth width={50} height={40} fill={'#000'} />,
     extraText: '100%',
+    extraTextColor: 'black',
     label: 'Cancel',
     clickable: true,
+    textColor: '#3490FD',
   },
   {
     id: 2,
@@ -154,6 +187,7 @@ export const headerConstsForSummaryScreen = [
     extraText: '',
     label: 'Summary',
     clickable: false,
+    textColor: 'black',
   },
   {
     id: 3,
@@ -161,6 +195,7 @@ export const headerConstsForSummaryScreen = [
     extraText: '',
     label: 'Prepare',
     clickable: true,
+    textColor: '#3490FD',
   },
 ];
 
