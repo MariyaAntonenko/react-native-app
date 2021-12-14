@@ -5,7 +5,7 @@ import {StyledText} from '../../../../common/simpleComponents/Text';
 
 export const ErrorButton = () => {
   return (
-    <Block padding={'3%'} backgroundColor={'white'}>
+    <Block padding={'5%'} backgroundColor={'white'}>
       <StyledButton
         backgroundColor={'#B51B44'}
         justifyContent={'center'}

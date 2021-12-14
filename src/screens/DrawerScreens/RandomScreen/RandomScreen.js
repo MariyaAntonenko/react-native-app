@@ -32,7 +32,7 @@ const useCounterIncrementer = () => {
 export const RandomScreen = () => {
   const {count, isError} = useCounterIncrementer();
   return (
-    <Block pt={'10%'} mb={'5%'} flex={1} backgroundColor={'#013555'}>
+    <Block pt={'10%'} flex={1} backgroundColor={'#013555'}>
       <Header headerConsts={headerConstsForRandomPage} />
       <RandomScreenContent count={count} />
       {isError ? (
