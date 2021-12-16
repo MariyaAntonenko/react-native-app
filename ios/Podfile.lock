@@ -341,7 +341,13 @@ PODS:
     - React-jsi (= 0.66.3)
     - React-logger (= 0.66.3)
     - React-perflogger (= 0.66.3)
+  - ReactNativeLocalization (2.1.7):
+    - React-Core
+  - RNCAsyncStorage (1.15.14):
+    - React-Core
   - RNGestureHandler (2.0.0):
+    - React-Core
+  - RNLocalize (2.1.6):
     - React-Core
   - RNReanimated (2.2.4):
     - DoubleConversion
@@ -436,7 +442,10 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ReactNativeLocalization (from `../node_modules/react-native-localization`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNLocalize (from `../node_modules/react-native-localize`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -522,8 +531,14 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeLocalization:
+    :path: "../node_modules/react-native-localization"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNLocalize:
+    :path: "../node_modules/react-native-localize"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -578,7 +593,10 @@ SPEC CHECKSUMS:
   React-RCTVibration: 50cfe7049167cfc7e83ac5542c6fff0c76791a9b
   React-runtimeexecutor: bbbdb3d8fcf327c6e2249ee71b6ef1764b7dc266
   ReactCommon: 9bac022ab71596f2b0fde1268272543184c63971
+  ReactNativeLocalization: 90a1181b7672309701dd7e5364fbf587319d41c6
+  RNCAsyncStorage: ea6b5c280997b2b32a587793163b1f10e580c4f7
   RNGestureHandler: 51c9f32f43720c3a1c7660690a843f33acbcf01f
+  RNLocalize: f10d91c76a5692d4cf6f218c70f6e4d7dcb42d1c
   RNReanimated: 65583befd5706cc9c86ae9a081786181ced37b93
   RNScreens: 03ba504f8c98607ad1f07808e71040e0afa335ec
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
