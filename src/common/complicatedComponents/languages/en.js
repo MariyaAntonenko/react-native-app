@@ -5,6 +5,7 @@ export default {
     login: 'Login',
     chart: 'Chart',
     random: 'Random',
+    signature: 'Signature',
   },
   articles: {
     cancelButton: 'Cancel',

@@ -5,6 +5,7 @@ export default {
     login: 'Iniciar sesión',
     chart: 'Gráfico',
     random: 'Aleatorio',
+    signature: 'Firma',
   },
   articles: {
     cancelButton: 'Cancelar',

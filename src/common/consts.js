@@ -194,5 +194,9 @@ export const drawerItemConsts = strings => {
       id: 5,
       label: strings.screens.random,
     },
+    {
+      id: 6,
+      label: strings.screens.signature,
+    },
   ];
 };

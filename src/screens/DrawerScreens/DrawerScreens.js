@@ -4,6 +4,7 @@ import {SummaryScreen} from './SummaryScreen/SummaryScreen';
 import {LoginScreen} from './LoginScreen/LoginScreen';
 import {ChartScreen} from './ChartScreen/ChartScreen';
 import {RandomScreen} from './RandomScreen/RandomScreen';
+import {SignatureScreen} from './SignatureScreen/SignatureScreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './CustomDrawerContent';
 import {strings} from '../../common/complicatedComponents/Context';
@@ -37,6 +38,11 @@ export const DrawerScreens = () => {
         name={strings.screens.random}
         options={{headerShown: false}}
         component={RandomScreen}
+      />
+      <Drawer.Screen
+        name={strings.screens.signature}
+        options={{headerShown: false}}
+        component={SignatureScreen}
       />
     </Drawer.Navigator>
   );
