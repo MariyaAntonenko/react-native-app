@@ -1,5 +1,4 @@
 import {css} from 'styled-components';
-import {string} from 'prop-types';
 
 export const margin = css`
   ${({margin}) => margin && `margin: ${margin}`}
@@ -31,27 +30,3 @@ export const border = css`
   ${({borderTopColor}) =>
     borderTopColor && `border-top-color: ${borderTopColor}`};
 `;
-border.propTypes = {
-  border: string,
-  borderRadius: string,
-  borderBottomWidth: string,
-  borderBottomStyle: string,
-  borderBottomColor: string,
-  borderTopWidth: string,
-  borderTopStyle: string,
-  borderTopColor: string,
-};
-margin.propTypes = {
-  margin: string,
-  mt: string,
-  mb: string,
-  mr: string,
-  ml: string,
-};
-padding.propTypes = {
-  padding: string,
-  pt: string,
-  pb: string,
-  pr: string,
-  pl: string,
-};

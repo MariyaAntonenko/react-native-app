@@ -3,10 +3,10 @@ import {LocalizationContext} from '../../common/complicatedComponents/Context';
 import LanguageIcon from '../../assets/icons/translate.svg';
 import {DrawerItem} from '@react-navigation/drawer';
 import {drawerItemConsts} from '../../common/consts';
-import {SafeAreaView} from '../../common/simpleComponents/SafeAreaView';
 import {Block} from '../../common/simpleComponents/Block';
 import {StyledButton} from '../../common/simpleComponents/Button';
 import {Alert} from 'react-native';
+import {SafeAreaView} from '../../common/simpleComponents/SafeAreaView';
 
 export const DrawerContent = props => {
   const {strings, setAppLanguage} = useContext(LocalizationContext);
@@ -35,14 +35,9 @@ export const DrawerContent = props => {
   );
 
   return (
-    <SafeAreaView>
-      <Block alignItems={'center'} padding={'5%'}>
-        <StyledButton
-          pt={'20px'}
-          pr={'20px'}
-          pb={'20px'}
-          pl={'20px'}
-          onPress={onChangeLanguage}>
+    <SafeAreaView flex={1}>
+      <Block alignItems={'center'}>
+        <StyledButton padding={'10%'} onPress={onChangeLanguage}>
           <LanguageIcon width={50} height={40} fill={'#3490FD'} />
         </StyledButton>
       </Block>

@@ -9,6 +9,7 @@ export const StyledKeyboardAvoidingView = styled.KeyboardAvoidingView`
 `;
 
 StyledKeyboardAvoidingView.propTypes = {
+  margin: string,
   flex: number,
   height: string,
 };

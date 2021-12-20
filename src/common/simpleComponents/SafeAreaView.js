@@ -12,6 +12,9 @@ export const SafeAreaView = styled.SafeAreaView`
 `;
 
 SafeAreaView.propTypes = {
+  margin: string,
+  padding: string,
+  border: string,
   backgroundColor: string,
   flex: number,
 };

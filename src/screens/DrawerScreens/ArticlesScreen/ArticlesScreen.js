@@ -13,7 +13,7 @@ export const ArticlesScreen = () => {
   const headerConsts = headerConstsForArticlesScreen(strings);
   const footerConsts = footerConstsForArticlesScreen(strings);
   return (
-    <SafeAreaView flex={1}>
+    <SafeAreaView flex={1} backgroundColor={'white'}>
       <Header headerConsts={headerConsts} />
       <ArticlesList />
       <Footer footerConst={footerConsts} />

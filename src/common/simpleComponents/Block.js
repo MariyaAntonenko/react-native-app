@@ -25,6 +25,9 @@ export const Block = styled.View`
 `;
 
 Block.propTypes = {
+  margin: string,
+  padding: string,
+  border: string,
   backgroundColor: string,
   display: string,
   flex: number,

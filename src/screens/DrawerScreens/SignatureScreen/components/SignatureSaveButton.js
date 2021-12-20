@@ -2,10 +2,9 @@ import React from 'react';
 import {StyledButton} from '../../../../common/simpleComponents/Button';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 
-export const SignatureSaveButton = () => {
-  const onSaveSignature = () => {};
+export const SignatureSaveButton = ({saveSign}) => {
   return (
-    <StyledButton onPress={onSaveSignature}>
+    <StyledButton onPress={saveSign}>
       <StyledText color={'gray'} fontWeight={'700'}>
         SAVE
       </StyledText>

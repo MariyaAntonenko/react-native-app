@@ -21,6 +21,9 @@ export const StyledButton = styled.TouchableOpacity`
 `;
 
 StyledButton.propTypes = {
+  margin: string,
+  padding: string,
+  border: string,
   flex: number,
   backgroundColor: string,
   display: string,
@@ -29,7 +32,6 @@ StyledButton.propTypes = {
   alignItems: string,
   width: string,
   height: string,
-  border: string,
   borderRadius: string,
   boxShadow: string,
   outline: string,

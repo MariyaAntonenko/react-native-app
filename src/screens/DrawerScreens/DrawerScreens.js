@@ -6,7 +6,7 @@ import {ChartScreen} from './ChartScreen/ChartScreen';
 import {RandomScreen} from './RandomScreen/RandomScreen';
 import {SignatureScreen} from './SignatureScreen/SignatureScreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {DrawerContent} from './CustomDrawerContent';
+import {DrawerContent} from './DrawerContent';
 import {strings} from '../../common/complicatedComponents/Context';
 
 const Drawer = createDrawerNavigator();

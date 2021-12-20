@@ -2,10 +2,9 @@ import React from 'react';
 import {StyledButton} from '../../../../common/simpleComponents/Button';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 
-export const SignatureResetButton = () => {
-  const onResetSignature = () => {};
+export const SignatureResetButton = ({resetSign}) => {
   return (
-    <StyledButton onPress={onResetSignature}>
+    <StyledButton onPress={resetSign}>
       <StyledText color={'gray'} fontWeight={'700'}>
         RESET
       </StyledText>
