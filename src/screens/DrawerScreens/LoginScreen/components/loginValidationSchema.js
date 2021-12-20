@@ -20,44 +20,23 @@ export const loginValidationSchema = yup.object().shape({
     .required('Required')
     .test('repeat-test', 'Do not repeat', function (value) {
       const repeatRegex = /^(?!.*(.)\1+).*$/;
-      let isValidPassword = repeatRegex.test(value);
-      if (!isValidPassword) {
-        return false;
-      }
-      return true;
+      return repeatRegex.test(value);
     })
     .test('Uppercase-test', '1 uppercase letter', function (value) {
       const uppercaseRegex = /^(?=.*[A-Z])/;
-      let isValidPassword = uppercaseRegex.test(value);
-      if (!isValidPassword) {
-        return false;
-      }
-      return true;
+      return uppercaseRegex.test(value);
     })
     .test('Lowercase-test', '1 lowercase letter', function (value) {
       const lowercaseRegex = /^(?=.*[a-z])/;
-      let isValidPassword = lowercaseRegex.test(value);
-      if (!isValidPassword) {
-        return false;
-      }
-      return true;
+      return lowercaseRegex.test(value);
     })
     .test('number-test', '1 number', function (value) {
       const numberRegex = /^.*(?=.*\d).*$/;
-      let isValidPassword = numberRegex.test(value);
-      if (!isValidPassword) {
-        return false;
-      }
-      return true;
+      return numberRegex.test(value);
     })
     .test('Special-test', '1 special symbol', function (value) {
       const specialRegex = /^.*((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1}).*$/;
-      let isValidPassword = specialRegex.test(value);
-      if (!isValidPassword) {
-        return false;
-      }
-      return true;
+      return specialRegex.test(value);
     })
-
     .min(7, 'Minimum 7 characters'),
 });
