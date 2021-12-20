@@ -198,5 +198,9 @@ export const drawerItemConsts = strings => {
       id: 6,
       label: strings.screens.signature,
     },
+    {
+      id: 7,
+      label: strings.screens.modal,
+    },
   ];
 };

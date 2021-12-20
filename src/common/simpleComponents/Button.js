@@ -18,6 +18,11 @@ export const StyledButton = styled.TouchableOpacity`
   ${({height}) => height && `height: ${height}`};
   ${({boxShadow}) => boxShadow && `box-shadow: ${boxShadow}`};
   ${({outline}) => outline && `outline: ${outline}`};
+  ${({position}) => position && `position: ${position}`};
+  ${({top}) => top && `top: ${top}`};
+  ${({left}) => left && `left: ${left}`};
+  ${({right}) => right && `right: ${right}`};
+  ${({bottom}) => bottom && `bottom: ${bottom}`};
 `;
 
 StyledButton.propTypes = {
@@ -35,4 +40,8 @@ StyledButton.propTypes = {
   borderRadius: string,
   boxShadow: string,
   outline: string,
+  position: string,
+  top: string,
+  left: string,
+  right: string,
 };

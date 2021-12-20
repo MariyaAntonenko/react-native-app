@@ -6,6 +6,7 @@ export default {
     chart: 'Gráfico',
     random: 'Aleatorio',
     signature: 'Firma',
+    modal: 'Modal',
   },
   articles: {
     cancelButton: 'Cancelar',
