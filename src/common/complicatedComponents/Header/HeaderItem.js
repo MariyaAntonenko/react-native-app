@@ -4,7 +4,14 @@ import {StyledText} from '../../simpleComponents/Text';
 import {StyledButton} from '../../simpleComponents/Button';
 import {useNavigation} from '@react-navigation/native';
 
-export const HeaderItem = ({Icon, extraText, label, clickable}) => {
+export const HeaderItem = ({
+  Icon,
+  extraText,
+  label,
+  clickable,
+  textColor,
+  extraTextColor,
+}) => {
   const navigation = useNavigation();
   return (
     <StyledButton onPress={() => navigation.toggleDrawer()}>
@@ -12,7 +19,10 @@ export const HeaderItem = ({Icon, extraText, label, clickable}) => {
         <Block display={'flex'} flexDirection={'row'} alignItems={'center'}>
           <Icon />
           {extraText ? (
-            <StyledText fontSize={'22px'} fontWeight={'500'} color={'black'}>
+            <StyledText
+              fontSize={'22px'}
+              fontWeight={'500'}
+              color={extraTextColor}>
               {extraText}
             </StyledText>
           ) : null}
@@ -20,7 +30,7 @@ export const HeaderItem = ({Icon, extraText, label, clickable}) => {
         {clickable ? (
           <StyledButton>
             <StyledText
-              color={'#3490FD'}
+              color={textColor}
               mt={'15px'}
               mr={'10px'}
               fontSize={'17px'}
@@ -30,7 +40,7 @@ export const HeaderItem = ({Icon, extraText, label, clickable}) => {
           </StyledButton>
         ) : (
           <StyledText
-            color={'black'}
+            color={textColor}
             mt={'15px'}
             ml={'5px'}
             mr={'10px'}

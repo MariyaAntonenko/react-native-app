@@ -24,7 +24,7 @@ export const Footer = ({footerConst}) => {
           fontWeight={'700'}
           fontSize={'15px'}
           color={'#678497'}>
-          {footerConst.title}
+          {footerConst}
         </StyledText>
       </StyledButton>
     </Block>
