@@ -1,37 +1,38 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {Image} from '../../../../common/simpleComponents/Image';
-import RNFS from 'react-native-fs';
-import {ScrollView} from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {StyledScrollView} from '../../../../common/simpleComponents/StyledScrollView';
 
 export const MySignatureTabScreen = () => {
-  const path = RNFS.DocumentDirectoryPath + '/signature.png';
+  const [signatures, setSignatures] = useState([]);
 
-  const storeSign = async () => {
-    await AsyncStorage.getItem('sign')
-      .then(res => console.log(res))
-      .catch(error => console.log(error.message));
-  };
-  const sign = storeSign();
-  console.log(sign);
-  // useEffect(() => {
-  // RNFS.readdir(RNFS.DocumentDirectoryPath)
-  //   .then(contents => {
-  //     console.log(contents);
-  //   })
-  //   .catch(err => {
-  //     console.log(err.message, err.code);
-  //   });
-  // }, []);
+  const renderSignatures = useCallback(
+    () =>
+      AsyncStorage.getItem('images')
+        .then(res => setSignatures(JSON.parse(res)))
+        .catch(error => console.log(error.message)),
+    [],
+  );
+
+  useEffect(() => {
+    renderSignatures();
+  }, [signatures]);
 
   return (
     <Block flex={1} backgroundColor={'wheat'} padding={'5%'}>
-      <ScrollView>
-        <Block>
-          <Image source={{uri: path}} height={'100px'} width={'100px'} />
-        </Block>
-      </ScrollView>
+      {signatures && (
+        <StyledScrollView>
+          {signatures.map((item, index) => (
+            <Image
+              source={{uri: item}}
+              height={'100px'}
+              width={'100px'}
+              key={index}
+            />
+          ))}
+        </StyledScrollView>
+      )}
     </Block>
   );
 };
