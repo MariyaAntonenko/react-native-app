@@ -3,6 +3,7 @@ import {SwipeListView} from 'react-native-swipe-list-view';
 import {Block} from '../simpleComponents/Block';
 import {StyledButton} from '../simpleComponents/Button';
 import {StyledText} from '../simpleComponents/Text';
+import {strings} from './Context';
 
 export const SwipeList = ({data, renderItem}) => {
   const [dataList, setDataList] = useState(data);
@@ -30,7 +31,9 @@ export const SwipeList = ({data, renderItem}) => {
           alignItems={'center'}
           backgroundColor={'red'}
           onPress={() => handleDelete(rowData.item.id, rowData, rowMap)}>
-          <StyledText color={'white'}>Delete</StyledText>
+          <StyledText color={'white'}>
+            {strings.articles.swipeTodeleteButton}
+          </StyledText>
         </StyledButton>
       </Block>
     ),
@@ -55,7 +58,7 @@ export const SwipeList = ({data, renderItem}) => {
         alignItems={'center'}
         justifyContent={'center'}>
         <StyledText fontSize={'25px'} color={'gray'}>
-          Empty :(
+          {strings.articles.emptyMessage}
         </StyledText>
       </Block>
     );
