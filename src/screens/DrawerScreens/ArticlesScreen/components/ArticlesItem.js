@@ -3,7 +3,7 @@ import Arrow from '../../../../assets/icons/arrow.svg';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import {StyledButton} from '../../../../common/simpleComponents/Button';
-import {ArticleImage} from '../../../../common/simpleComponents/Image';
+import {Image} from '../../../../common/simpleComponents/Image';
 
 export const ArticlesItem = ({data}) => {
   return (
@@ -18,7 +18,7 @@ export const ArticlesItem = ({data}) => {
       pr={'5px'}
       borderBottomWidth={'0.5px'}
       borderBottomColor={'gray'}>
-      <ArticleImage
+      <Image
         source={require('../../../../assets/images/articlesImg.png')}
         width={'70px'}
         height={'70px'}
