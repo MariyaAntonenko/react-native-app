@@ -7,6 +7,7 @@ export default {
     random: 'Random',
     signature: 'Signature',
     modal: 'Modal',
+    webview: 'WebView',
   },
   articles: {
     cancelButton: 'Cancel',

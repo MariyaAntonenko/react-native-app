@@ -7,6 +7,7 @@ export default {
     random: 'Aleatorio',
     signature: 'Firma',
     modal: 'Modal',
+    webview: 'Vista web',
   },
   articles: {
     cancelButton: 'Cancelar',

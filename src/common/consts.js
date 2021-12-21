@@ -202,5 +202,9 @@ export const drawerItemConsts = strings => {
       id: 7,
       label: strings.screens.modal,
     },
+    {
+      id: 8,
+      label: strings.screens.webview,
+    },
   ];
 };
