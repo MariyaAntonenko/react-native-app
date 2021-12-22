@@ -206,5 +206,32 @@ export const drawerItemConsts = strings => {
       id: 8,
       label: strings.screens.webview,
     },
+    {
+      id: 9,
+      label: strings.screens.map,
+    },
   ];
 };
+export const markersConsts = [
+  {
+    id: 1,
+    coordinate: {
+      latitude: 47.8328,
+      longitude: 35.131,
+    },
+  },
+  {
+    id: 2,
+    coordinate: {
+      latitude: 47.8358,
+      longitude: 35.121,
+    },
+  },
+  {
+    id: 3,
+    coordinate: {
+      latitude: 47.831,
+      longitude: 35.141,
+    },
+  },
+];

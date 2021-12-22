@@ -8,6 +8,7 @@ export default {
     signature: 'Signature',
     modal: 'Modal',
     webview: 'WebView',
+    map: 'Map',
   },
   articles: {
     cancelButton: 'Cancel',

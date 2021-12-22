@@ -8,6 +8,7 @@ export default {
     signature: 'Firma',
     modal: 'Modal',
     webview: 'Vista web',
+    map: 'Mapa',
   },
   articles: {
     cancelButton: 'Cancelar',

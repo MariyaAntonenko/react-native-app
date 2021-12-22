@@ -7,6 +7,7 @@ import {RandomScreen} from './RandomScreen/RandomScreen';
 import {SignatureScreen} from './SignatureScreen/SignatureScreen';
 import {ModalScreen} from './ModalScreen/ModalScreen';
 import {WebViewScreen} from './WebViewScreen/WebViewScreen';
+import {MapScreen} from './MapScreen/MapScreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
 import {strings} from '../../common/complicatedComponents/Context';
@@ -54,6 +55,11 @@ export const DrawerScreens = () => {
       <Drawer.Screen
         name={strings.screens.webview}
         component={WebViewScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.map}
+        component={MapScreen}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>
