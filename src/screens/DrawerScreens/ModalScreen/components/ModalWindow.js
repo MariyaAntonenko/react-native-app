@@ -1,0 +1,36 @@
+import React from 'react';
+import {Block} from '../../../../common/simpleComponents/Block';
+import {StyledText} from '../../../../common/simpleComponents/Text';
+import {StyledButton} from '../../../../common/simpleComponents/Button';
+import Cross from '../../../../assets/icons/cross.svg';
+import Modal from 'react-native-modal';
+
+export const ModalWindow = ({isModalVisible, toggleModal}) => {
+  return (
+    <Modal
+      onSwipeComplete={toggleModal}
+      swipeDirection={['up', 'down']}
+      transparent={true}
+      animationType="slideInUp"
+      isVisible={isModalVisible}>
+      <Block
+        flex={1}
+        padding={'1%'}
+        alignItems={'center'}
+        justifyContent={'center'}>
+        <Block
+          flexDirection={'row'}
+          backgroundColor={'white'}
+          borderRadius={'9px'}
+          padding={'20%'}>
+          <StyledText color={'black'} fontSize={'40px'}>
+            Close me:(
+          </StyledText>
+          <StyledButton position={'absolute'} right={'0'} onPress={toggleModal}>
+            <Cross width={25} height={25} fill={'red'} />
+          </StyledButton>
+        </Block>
+      </Block>
+    </Modal>
+  );
+};
