@@ -210,6 +210,14 @@ export const drawerItemConsts = strings => {
       id: 9,
       label: strings.screens.map,
     },
+    {
+      id: 10,
+      label: strings.screens.camera,
+    },
+    {
+      id: 11,
+      label: strings.screens.fingerprint,
+    },
   ];
 };
 export const markersConsts = [

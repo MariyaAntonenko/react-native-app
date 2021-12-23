@@ -9,6 +9,8 @@ export default {
     modal: 'Modal',
     webview: 'WebView',
     map: 'Map',
+    camera: 'Camera',
+    fingerprint: 'Fingerprint',
   },
   articles: {
     cancelButton: 'Cancel',

@@ -9,6 +9,8 @@ export default {
     modal: 'Modal',
     webview: 'Vista web',
     map: 'Mapa',
+    camera: 'Cámara',
+    fingerprint: 'Huella dactilar',
   },
   articles: {
     cancelButton: 'Cancelar',

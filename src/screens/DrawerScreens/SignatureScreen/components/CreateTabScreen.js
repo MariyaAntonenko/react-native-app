@@ -4,7 +4,6 @@ import SignatureCapture from 'react-native-signature-capture';
 import {SignatureSaveButton} from './SignatureSaveButton';
 import {SignatureResetButton} from './SignatureResetButton';
 import RNFS from 'react-native-fs';
-
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const CreateTabScreen = () => {
