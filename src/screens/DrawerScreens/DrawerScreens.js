@@ -9,7 +9,9 @@ import {ModalScreen} from './ModalScreen/ModalScreen';
 import {WebViewScreen} from './WebViewScreen/WebViewScreen';
 import {MapScreen} from './MapScreen/MapScreen';
 import {CameraScreen} from './CameraScreen/CameraScreen';
-import {FingerprintScreen} from './FingerprintScreen/FingerprintScreen';
+import {FingerprintScreenIos} from './FingerprintScreen/FingerprintScreen.ios';
+import {FingerprintScreenAndroid} from './FingerprintScreen/FingerprintScreen.android';
+import {Platform} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
 import {strings} from '../../common/complicatedComponents/Context';
@@ -71,7 +73,11 @@ export const DrawerScreens = () => {
       />
       <Drawer.Screen
         name={strings.screens.fingerprint}
-        component={FingerprintScreen}
+        component={
+          Platform.OS === 'ios'
+            ? FingerprintScreenIos
+            : FingerprintScreenAndroid
+        }
         options={{headerShown: false}}
       />
     </Drawer.Navigator>
