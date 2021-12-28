@@ -7,13 +7,16 @@ import {
   headerConstsForSummaryScreen,
   footerConstsForSummaryScreen,
 } from '../../../common/consts';
+import {strings} from '../../../common/complicatedComponents/Context';
 
 export const SummaryScreen = () => {
+  const headerConsts = headerConstsForSummaryScreen(strings);
+  const footerConsts = footerConstsForSummaryScreen(strings);
   return (
     <SafeAreaView backgroundColor={'white'} flex={1}>
-      <Header headerConsts={headerConstsForSummaryScreen} />
+      <Header headerConsts={headerConsts} />
       <TabsArea />
-      <Footer footerConst={footerConstsForSummaryScreen} />
+      <Footer footerConst={footerConsts} />
     </SafeAreaView>
   );
 };
