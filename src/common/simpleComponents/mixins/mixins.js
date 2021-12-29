@@ -14,3 +14,19 @@ export const padding = css`
   ${({pl}) => pl && `padding-left: ${pl}`}
   ${({pr}) => pr && `padding-right: ${pr}`}
 `;
+export const border = css`
+  ${({border}) => border && `border: ${border}`};
+  ${({borderRadius}) => borderRadius && `border-radius: ${borderRadius}`};
+  ${({borderBottomWidth}) =>
+    borderBottomWidth && `border-bottom-width: ${borderBottomWidth}`};
+  ${({borderBottomStyle}) =>
+    borderBottomStyle && `border-bottom-style: ${borderBottomStyle}`};
+  ${({borderBottomColor}) =>
+    borderBottomColor && `border-bottom-color: ${borderBottomColor}`};
+  ${({borderTopWidth}) =>
+    borderTopWidth && `border-top-width: ${borderTopWidth}`};
+  ${({borderTopStyle}) =>
+    borderTopStyle && `border-top-style: ${borderTopStyle}`};
+  ${({borderTopColor}) =>
+    borderTopColor && `border-top-color: ${borderTopColor}`};
+`;
