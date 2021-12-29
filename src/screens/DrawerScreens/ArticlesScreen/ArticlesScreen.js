@@ -8,12 +8,16 @@ import {
   footerConstsForArticlesScreen,
 } from '../../../common/consts';
 import {strings} from '../../../common/complicatedComponents/Context';
+import {StatusBar} from 'react-native';
 
 export const ArticlesScreen = () => {
   const headerConsts = headerConstsForArticlesScreen(strings);
   const footerConsts = footerConstsForArticlesScreen(strings);
   return (
-    <SafeAreaView flex={1} backgroundColor={'white'}>
+    <SafeAreaView
+      pt={StatusBar.currentHeight}
+      flex={1}
+      backgroundColor={'white'}>
       <Header headerConsts={headerConsts} />
       <ArticlesList />
       <Footer footerConst={footerConsts} />

@@ -1,6 +1,6 @@
 import React, {useCallback, useContext} from 'react';
 import {LocalizationContext} from '../../common/complicatedComponents/Context';
-import {ScrollView} from 'react-native';
+import {ScrollView, StatusBar} from 'react-native';
 import LanguageIcon from '../../assets/icons/translate.svg';
 import {DrawerItem} from '@react-navigation/drawer';
 import {drawerItemConsts} from '../../common/consts';
@@ -36,13 +36,13 @@ export const DrawerContent = props => {
   );
 
   return (
-    <Block flex={1}>
+    <SafeAreaView pt={StatusBar.currentHeight} flex={1}>
       <Block alignItems={'center'}>
-        <StyledButton padding={'10%'} onPress={onChangeLanguage}>
+        <StyledButton padding={'5%'} onPress={onChangeLanguage}>
           <LanguageIcon width={50} height={40} fill={'#3490FD'} />
         </StyledButton>
       </Block>
-      <ScrollView>
+      <ScrollView style={{flex: 1}}>
         {drawerItems.map(item => (
           <DrawerItem
             label={item.label}
@@ -51,6 +51,6 @@ export const DrawerContent = props => {
           />
         ))}
       </ScrollView>
-    </Block>
+    </SafeAreaView>
   );
 };
