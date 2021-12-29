@@ -11,6 +11,7 @@ import {MapScreen} from './MapScreen/MapScreen';
 import {CameraScreen} from './CameraScreen/CameraScreen';
 import {FingerprintScreenIos} from './FingerprintScreen/FingerprintScreen.ios';
 import {FingerprintScreenAndroid} from './FingerprintScreen/FingerprintScreen.android';
+import {FlashMessageScreen} from './FlashMessageScreen/FlashMessageScreen';
 import {Platform} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
@@ -78,6 +79,11 @@ export const DrawerScreens = () => {
             ? FingerprintScreenIos
             : FingerprintScreenAndroid
         }
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.flashmessage}
+        component={FlashMessageScreen}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>

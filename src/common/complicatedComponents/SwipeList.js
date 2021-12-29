@@ -4,6 +4,7 @@ import {Block} from '../simpleComponents/Block';
 import {StyledButton} from '../simpleComponents/Button';
 import {StyledText} from '../simpleComponents/Text';
 import {strings} from './Context';
+import {showMessage} from 'react-native-flash-message';
 
 export const SwipeList = ({data, renderItem}) => {
   const [dataList, setDataList] = useState(data);
@@ -51,6 +52,10 @@ export const SwipeList = ({data, renderItem}) => {
   );
 
   if (!dataList.length) {
+    showMessage({
+      message: 'There is no items!',
+      type: 'danger',
+    });
     return (
       <Block
         flex={1}

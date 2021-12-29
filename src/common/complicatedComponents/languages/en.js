@@ -11,6 +11,7 @@ export default {
     map: 'Map',
     camera: 'Camera',
     fingerprint: 'Fingerprint',
+    flashmessage: 'Flash Message',
   },
   articles: {
     cancelButton: 'Cancel',

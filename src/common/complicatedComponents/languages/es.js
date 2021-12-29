@@ -11,6 +11,7 @@ export default {
     map: 'Mapa',
     camera: 'Cámara',
     fingerprint: 'Huella dactilar',
+    flashmessage: 'Mensaje flash',
   },
   articles: {
     cancelButton: 'Cancelar',

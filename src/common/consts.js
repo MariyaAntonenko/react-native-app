@@ -218,6 +218,10 @@ export const drawerItemConsts = strings => {
       id: 11,
       label: strings.screens.fingerprint,
     },
+    {
+      id: 12,
+      label: strings.screens.flashmessage,
+    },
   ];
 };
 export const markersConsts = [
