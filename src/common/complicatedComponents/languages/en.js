@@ -12,6 +12,7 @@ export default {
     camera: 'Camera',
     fingerprint: 'Fingerprint',
     flashmessage: 'Flash Message',
+    download: 'Download',
   },
   articles: {
     cancelButton: 'Cancel',

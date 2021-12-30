@@ -12,6 +12,7 @@ export default {
     camera: 'Cámara',
     fingerprint: 'Huella dactilar',
     flashmessage: 'Mensaje flash',
+    download: 'Descargar',
   },
   articles: {
     cancelButton: 'Cancelar',

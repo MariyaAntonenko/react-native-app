@@ -222,6 +222,10 @@ export const drawerItemConsts = strings => {
       id: 12,
       label: strings.screens.flashmessage,
     },
+    {
+      id: 13,
+      label: strings.screens.download,
+    },
   ];
 };
 export const markersConsts = [

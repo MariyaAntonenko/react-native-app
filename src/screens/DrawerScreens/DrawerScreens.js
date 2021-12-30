@@ -12,6 +12,7 @@ import {CameraScreen} from './CameraScreen/CameraScreen';
 import {FingerprintScreenIos} from './FingerprintScreen/FingerprintScreen.ios';
 import {FingerprintScreenAndroid} from './FingerprintScreen/FingerprintScreen.android';
 import {FlashMessageScreen} from './FlashMessageScreen/FlashMessageScreen';
+import {DownloadScreen} from './DownloadScreen/DownloadScreen';
 import {Platform} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
@@ -84,6 +85,11 @@ export const DrawerScreens = () => {
       <Drawer.Screen
         name={strings.screens.flashmessage}
         component={FlashMessageScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.download}
+        component={DownloadScreen}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>
