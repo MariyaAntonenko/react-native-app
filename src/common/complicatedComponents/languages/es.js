@@ -13,6 +13,7 @@ export default {
     fingerprint: 'Huella dactilar',
     flashmessage: 'Mensaje flash',
     download: 'Descargar',
+    audio: 'Reproductor de música',
   },
   articles: {
     cancelButton: 'Cancelar',

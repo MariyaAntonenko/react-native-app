@@ -13,6 +13,7 @@ export default {
     fingerprint: 'Fingerprint',
     flashmessage: 'Flash Message',
     download: 'Download',
+    audio: 'Audio player',
   },
   articles: {
     cancelButton: 'Cancel',

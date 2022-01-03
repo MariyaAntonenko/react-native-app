@@ -226,6 +226,10 @@ export const drawerItemConsts = strings => {
       id: 13,
       label: strings.screens.download,
     },
+    {
+      id: 14,
+      label: strings.screens.audio,
+    },
   ];
 };
 export const markersConsts = [
@@ -249,5 +253,25 @@ export const markersConsts = [
       latitude: 47.831,
       longitude: 35.141,
     },
+  },
+];
+export const playList = [
+  {
+    id: '1',
+    title: 'Rain',
+    artist: 'SFX Producer',
+    url: require('../assets/songs/Rain.mp3'),
+  },
+  {
+    id: '2',
+    title: 'Ocean',
+    artist: 'SFX Producer',
+    url: require('../assets/songs/Ocean.mp3'),
+  },
+  {
+    id: '3',
+    title: 'Fireworks',
+    artist: 'SFX Producer',
+    url: require('../assets/songs/Fireworks.mp3'),
   },
 ];
