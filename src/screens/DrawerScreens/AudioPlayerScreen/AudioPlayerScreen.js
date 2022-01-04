@@ -17,7 +17,7 @@ import MusicIcon from '../../../assets/icons/musicIcon.svg';
 import NextPlayIcon from '../../../assets/icons/play-next.svg';
 import LikeIcon from '../../../assets/icons/like.svg';
 import RepeatOffIcon from '../../../assets/icons/repeat-off.svg';
-import RepeatIcon from '../../../assets/icons/repeat.svg';
+import RepeatQueueIcon from '../../../assets/icons/repeat.svg';
 import RepeatOneIcon from '../../../assets/icons/repeat-one.svg';
 import {Block} from '../../../common/simpleComponents/Block';
 import {StyledText} from '../../../common/simpleComponents/Text';
@@ -29,6 +29,12 @@ const setupPlayer = async () => {
     await TrackPlayer.updateOptions({
       stopWithApp: false,
       capabilities: [
+        Capability.Play,
+        Capability.Pause,
+        Capability.SkipToNext,
+        Capability.SkipToPrevious,
+      ],
+      notificationCapabilities: [
         Capability.Play,
         Capability.Pause,
         Capability.SkipToNext,
@@ -53,21 +59,39 @@ const togglePlayback = async playbackState => {
 export const AudioPlayerScreen = () => {
   const [isSeeking, setIsSeeking] = useState(false);
   const [sliderValue, setSliderValue] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [repeatMode, setRepeatMode] = useState('Off');
+  const [repeatSongMode, setRepeatSongMode] = useState(0);
+  const [trackTitle, setTrackTitle] = useState('');
+  const [trackArtist, setTrackArtist] = useState('');
+  const [currentTrack, setCurrentTrack] = useState(null);
+  const [isDisableNextButton, setDisableNextButton] = useState(false);
   const playbackState = usePlaybackState();
   const progress = useProgress();
+
+  useEffect(async () => {
+    await TrackPlayer.getCurrentTrack().then(res => setCurrentTrack(res));
+    return () => TrackPlayer.destroy();
+  }, [currentTrack]);
+
+  useTrackPlayerEvents([Event.PlaybackTrackChanged], async event => {
+    if (event.type === Event.PlaybackTrackChanged && event.nextTrack !== null) {
+      const track = await TrackPlayer.getTrack(event.nextTrack);
+      const {title, artist} = track;
+      setTrackTitle(title);
+      setTrackArtist(artist);
+    }
+  });
+
   const skipToNext = async () => {
-    await TrackPlayer.skipToNext();
-    setCurrentIndex(prev => prev + 1);
+    if (currentTrack < playList.length) {
+      await TrackPlayer.skipToNext();
+    }
+    setDisableNextButton(true);
   };
   const skipToPrevious = async () => {
     await TrackPlayer.skipToPrevious();
-    setCurrentIndex(prev => prev - 1);
   };
   useEffect(() => {
     setupPlayer();
-    return () => TrackPlayer.destroy();
   }, []);
 
   useEffect(() => {
@@ -88,10 +112,35 @@ export const AudioPlayerScreen = () => {
     setIsSeeking(false);
   };
 
-  const onToggleRepeatMode = () => {};
+  const RepeatModeIcon = () => {
+    if (repeatSongMode === 0) {
+      return <RepeatOffIcon width={'25px'} height={'25px'} fill={'blue'} />;
+    }
+    if (repeatSongMode === 1) {
+      return <RepeatOneIcon width={'25px'} height={'25px'} fill={'blue'} />;
+    }
+    if (repeatSongMode === 2) {
+      return <RepeatQueueIcon width={'25px'} height={'25px'} fill={'blue'} />;
+    }
+  };
+  const onToggleRepeatMode = () => {
+    if (repeatSongMode === 0) {
+      TrackPlayer.setRepeatMode(RepeatMode.Track);
+      setRepeatSongMode(1);
+    }
+    if (repeatSongMode === 1) {
+      TrackPlayer.setRepeatMode(RepeatMode.Queue);
+      setRepeatSongMode(2);
+    }
+    if (repeatSongMode === 2) {
+      TrackPlayer.setRepeatMode(RepeatMode.Off);
+      setRepeatSongMode(0);
+    }
+  };
   return (
     <Block
       flex={1}
+      pt={'5%'}
       backgroundColor={'#052d42'}
       justifyContent={'center'}
       alignItems={'center'}>
@@ -100,9 +149,9 @@ export const AudioPlayerScreen = () => {
       </Block>
       <Block padding={'5%'} alignItems={'center'}>
         <StyledText color={'#eeee'} fontSize={'25px'}>
-          {playList[currentIndex].title}
+          {trackTitle}
         </StyledText>
-        <StyledText color={'#eeee'}>{playList[currentIndex].artist}</StyledText>
+        <StyledText color={'#eeee'}>{trackArtist}</StyledText>
       </Block>
       <Block width={'80%'}>
         <Slider
@@ -144,7 +193,7 @@ export const AudioPlayerScreen = () => {
             <PlayIcon width={'30px'} height={'30px'} fill={'blue'} />
           )}
         </StyledButton>
-        <StyledButton onPress={skipToNext}>
+        <StyledButton disabled={isDisableNextButton} onPress={skipToNext}>
           <NextPlayIcon width={'30px'} height={'30px'} fill={'blue'} />
         </StyledButton>
       </Block>
@@ -153,16 +202,8 @@ export const AudioPlayerScreen = () => {
         justifyContent={'space-around'}
         width={'100%'}
         padding={'10%'}>
-        <StyledButton>
-          {/*{RepeatMode.Off && (*/}
-          {/*  <RepeatOffIcon width={'25px'} height={'25px'} fill={'blue'} />*/}
-          {/*)}*/}
-          {/*{RepeatMode.Track && (*/}
-          {/*  <RepeatOneIcon width={'25px'} height={'25px'} fill={'blue'} />*/}
-          {/*)}*/}
-          {/*{RepeatMode.Queue && (*/}
-          {/*  <RepeatIcon width={'25px'} height={'25px'} fill={'blue'} />*/}
-          {/*)}*/}
+        <StyledButton onPress={onToggleRepeatMode}>
+          {RepeatMode[repeatSongMode] && <RepeatModeIcon />}
         </StyledButton>
         <StyledButton>
           <LikeIcon width={'25px'} height={'25px'} fill={'blue'} />

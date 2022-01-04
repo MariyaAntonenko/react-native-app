@@ -8,7 +8,6 @@ import {Block} from '../../../common/simpleComponents/Block';
 import {StyledText} from '../../../common/simpleComponents/Text';
 import {StyledButton} from '../../../common/simpleComponents/Button';
 export const DownloadScreen = () => {
-  console.log(RNFetchBlob.fs.dirs);
   const REMOTE_IMAGE_PATH =
     'https://raw.githubusercontent.com/AboutReact/sampleresource/master/gift.png';
   const checkPermission = async () => {
