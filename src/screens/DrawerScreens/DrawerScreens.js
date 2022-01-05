@@ -23,7 +23,9 @@ const Drawer = createDrawerNavigator();
 
 export const DrawerScreens = () => {
   return (
-    <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+    <Drawer.Navigator
+      initialRouteName={strings.screens.audio}
+      drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen
         name={strings.screens.articles}
         component={ArticlesScreen}
