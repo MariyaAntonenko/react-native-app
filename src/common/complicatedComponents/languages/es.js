@@ -14,6 +14,7 @@ export default {
     flashmessage: 'Mensaje flash',
     download: 'Descargar',
     audio: 'Reproductor de música',
+    qr: 'Escáner de código QR',
   },
   articles: {
     cancelButton: 'Cancelar',

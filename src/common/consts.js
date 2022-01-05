@@ -230,6 +230,10 @@ export const drawerItemConsts = strings => {
       id: 14,
       label: strings.screens.audio,
     },
+    {
+      id: 15,
+      label: strings.screens.qr,
+    },
   ];
 };
 export const markersConsts = [

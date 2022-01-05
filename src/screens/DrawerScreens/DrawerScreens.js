@@ -14,6 +14,7 @@ import {FingerprintScreenAndroid} from './FingerprintScreen/FingerprintScreen.an
 import {FlashMessageScreen} from './FlashMessageScreen/FlashMessageScreen';
 import {DownloadScreen} from './DownloadScreen/DownloadScreen';
 import {AudioPlayerScreen} from './AudioPlayerScreen/AudioPlayerScreen';
+import {QrCodeScannerScreen} from './QrCodeScannerScreen/QrCodeScannerScreen';
 import {Platform} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
@@ -24,7 +25,7 @@ const Drawer = createDrawerNavigator();
 export const DrawerScreens = () => {
   return (
     <Drawer.Navigator
-      initialRouteName={strings.screens.audio}
+      initialRouteName={strings.screens.qr}
       drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen
         name={strings.screens.articles}
@@ -98,6 +99,11 @@ export const DrawerScreens = () => {
       <Drawer.Screen
         name={strings.screens.audio}
         component={AudioPlayerScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.qr}
+        component={QrCodeScannerScreen}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>
