@@ -1,51 +1,45 @@
-import React from 'react';
-import QRCodeScanner from 'react-native-qrcode-scanner';
-import {RNCamera} from 'react-native-camera';
-import {AppRegistry, Linking} from 'react-native';
-import {StyledText} from '../../../common/simpleComponents/Text';
+import React, {useState} from 'react';
 import {Block} from '../../../common/simpleComponents/Block';
-import {StyledButton} from '../../../common/simpleComponents/Button';
+import {QrCodeScanner} from './components/QrCodeScanner';
+import {QrCodeStartScreen} from './components/QrCodeStartScreen';
+import {QrCodeResultScreen} from './components/QrCodeResultScreen';
+
+const urlRegex =
+  /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
 
 export const QrCodeScannerScreen = () => {
+  const [scan, setScan] = useState(false);
+  const [result, setResult] = useState();
+  const isValidCode = urlRegex.test(result);
   const onSuccess = e => {
-    Linking.openURL(e.data).catch(
-      err => console.error('An error occured', err),
-      scanner.reactivate(),
-    );
+    setResult(e.data);
+    setScan(false);
+  };
+  const startScan = () => {
+    setScan(true);
+    setResult();
+  };
+  const cancelScan = () => {
+    setScan(false);
+  };
+  const onNavigationStateChange = () => {
+    setResult(false);
   };
   return (
-    <Block flex={1} backgroundColor={'black'}>
-      <QRCodeScanner
-        onRead={onSuccess}
-        ref={node => {
-          this.scanner = node;
-        }}
-        cameraStyle={{
-          // height: 200,
-          // marginTop: 20,
-          // width: 200,
-          alignSelf: 'center',
-          justifyContent: 'center',
-        }}
-        reactivate
-        reactivateTimeout={3000}
-        // customMarker={<Block border={'1px solid gray'}></Block>}
-        containerStyle={{marginTop: 10}}
-        showMarker
-        flashMode={RNCamera.Constants.FlashMode.auto}
-        topContent={
-          <StyledText color={'white'} fontSize={'20px'}>
-            Please, scan your QR-code
-          </StyledText>
-        }
-        bottomContent={
-          <StyledButton>
-            <StyledText color={'#424242'} fontSize={'30px'}>
-              Got it!
-            </StyledText>
-          </StyledButton>
-        }
-      />
+    <Block
+      flex={1}
+      backgroundColor={'black'}
+      justifyContent={'center'}
+      alignItems={'center'}>
+      {result && (
+        <QrCodeResultScreen
+          result={result}
+          isValidCode={isValidCode}
+          onNavigationStateChange={onNavigationStateChange}
+        />
+      )}
+      {!scan && !result && <QrCodeStartScreen startScan={startScan} />}
+      {scan && <QrCodeScanner onSuccess={onSuccess} cancelScan={cancelScan} />}
     </Block>
   );
 };
