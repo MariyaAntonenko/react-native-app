@@ -173,3 +173,18 @@ export const footerConstsForArticlesScreen = {
 export const footerConstsForSummaryScreen = {
   title: 'Pull the trigger to scan a carton barcode.',
 };
+export const loginFormConsts = [
+  {
+    id: 1,
+    label: 'username',
+    hasShowPasswordIcon: false,
+    isPassword: false,
+  },
+  {
+    id: 2,
+    marginTop: '10%',
+    label: 'password',
+    hasShowPasswordIcon: true,
+    isPassword: true,
+  },
+];
