@@ -1,19 +1,19 @@
 import styled from 'styled-components/native';
-import {margin, padding, border} from './mixins/mixins';
+import {marginMixins, paddingMixins, borderMixins} from './mixins/mixins';
 import PropTypes, {string, number} from 'prop-types';
 
 export const SafeAreaView = styled.SafeAreaView`
-  ${margin};
-  ${padding};
-  ${border};
+  ${marginMixins};
+  ${paddingMixins};
+  ${borderMixins};
   ${({paddingHorizontal}) =>
-    paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
+          paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
   ${({paddingVertical}) =>
-    paddingVertical && `paddingVertical: ${paddingVertical}`};
+          paddingVertical && `paddingVertical: ${paddingVertical}`};
   ${({marginHorizontal}) =>
-    marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
+          marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
   ${({marginVertical}) =>
-    marginVertical && `marginVertical: ${marginVertical}`};
+          marginVertical && `marginVertical: ${marginVertical}`};
   ${({backgroundColor}) =>
     backgroundColor && `background-color: ${backgroundColor}`};
   ${({flex}) => flex && `flex: ${flex}`};

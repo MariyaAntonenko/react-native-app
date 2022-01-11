@@ -13,16 +13,13 @@ export const ModalWindow = ({isModalVisible, toggleModal}) => {
       transparent={true}
       animationType="slideInUp"
       isVisible={isModalVisible}>
-      <Block
-        flex={1}
-        padding={'1%'}
-        alignItems={'center'}
-        justifyContent={'center'}>
+      <Block flex={1} alignItems={'center'} justifyContent={'center'}>
         <Block
           flexDirection={'row'}
           backgroundColor={'white'}
           borderRadius={'9px'}
-          padding={'20%'}>
+          paddingVertical={'60px'}
+          paddingHorizontal={'60px'}>
           <StyledText color={'black'} fontSize={'40px'}>
             Close me:(
           </StyledText>

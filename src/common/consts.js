@@ -244,6 +244,21 @@ export const drawerItemConsts = strings => {
     },
   ];
 };
+export const loginFormConsts = [
+  {
+    id: 1,
+    label: 'username',
+    hasShowPasswordIcon: false,
+    isPassword: false,
+  },
+  {
+    id: 2,
+    marginTop: '10%',
+    label: 'password',
+    hasShowPasswordIcon: true,
+    isPassword: true,
+  },
+];
 export const markersConsts = [
   {
     id: 1,

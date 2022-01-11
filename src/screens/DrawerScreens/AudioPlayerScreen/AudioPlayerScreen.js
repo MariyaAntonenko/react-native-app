@@ -39,7 +39,7 @@ export const AudioPlayerScreen = () => {
   return (
     <Block
       flex={1}
-      pt={'5%'}
+      pt={'20px'}
       backgroundColor={'#052d42'}
       justifyContent={'center'}
       alignItems={'center'}>

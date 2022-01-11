@@ -21,7 +21,7 @@ export const PlayerTitle = () => {
     }
   });
   return (
-    <Block padding={'5%'} alignItems={'center'}>
+    <Block paddingVertical={'25px'} alignItems={'center'}>
       <StyledText color={'#eeee'} fontSize={'25px'}>
         {trackTitle}
       </StyledText>

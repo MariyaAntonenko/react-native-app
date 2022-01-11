@@ -16,7 +16,7 @@ export const CameraButtons = ({
 }) => {
   return (
     <Block
-      pt={'10%'}
+      pt={'40px'}
       flexDirection={'row'}
       justifyContent={'space-around'}
       alignItems={'center'}>

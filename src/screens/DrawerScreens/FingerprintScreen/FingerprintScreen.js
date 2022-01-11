@@ -14,7 +14,7 @@ export const FingerprintScreen = () => {
   );
   return (
     <Block flex={1} alignItems={'center'} justifyContent={'flex-start'}>
-      <Block pt={'15%'} pb={'10%'}>
+      <Block paddingVertical={'50px'}>
         <FingerprintIcon width={'100px'} height={'100px'} fill={fingerColor} />
         {checking && (
           <StyledText color={'blue'} fontSize={'15px'}>
@@ -26,7 +26,8 @@ export const FingerprintScreen = () => {
         onPress={onReadFingerFunction}
         border={'0.5px solid gray'}
         borderRadius={'6px'}
-        padding={'5%'}>
+        paddingVertical={'20px'}
+        paddingHorizontal={'15px'}>
         <StyledText color={'black'}>Touch to start scanning</StyledText>
       </StyledButton>
     </Block>

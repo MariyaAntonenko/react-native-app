@@ -30,8 +30,8 @@ export const PlayerControlButtons = () => {
   };
   return (
     <Block
-      padding={'5%'}
-      pt={'10%'}
+      pt={'40px'}
+      pb={'20px'}
       width={'100%'}
       flexDirection={'row'}
       alignItems={'center'}

@@ -39,7 +39,7 @@ export const CameraScreen = () => {
         toggleFacing={toggleFacing}
         toggleFlash={toggleFlash}
       />
-      <Block flexDirection={'row'} pt={'5%'} pb={'10%'}>
+      <Block flexDirection={'row'} pt={'20px'} pb={'40px'}>
         <ScrollView horizontal>
           {photos.map((photo, i) => (
             <Image

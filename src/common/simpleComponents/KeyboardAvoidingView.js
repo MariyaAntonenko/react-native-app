@@ -1,17 +1,17 @@
 import styled from 'styled-components/native';
 import PropTypes, {number, string} from 'prop-types';
-import {margin} from './mixins/mixins';
+import {marginMixins} from './mixins/mixins';
 
 export const StyledKeyboardAvoidingView = styled.KeyboardAvoidingView`
-  ${margin};
+  ${marginMixins};
   ${({paddingHorizontal}) =>
-    paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
+          paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
   ${({paddingVertical}) =>
-    paddingVertical && `paddingVertical: ${paddingVertical}`};
+          paddingVertical && `paddingVertical: ${paddingVertical}`};
   ${({marginHorizontal}) =>
-    marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
+          marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
   ${({marginVertical}) =>
-    marginVertical && `marginVertical: ${marginVertical}`};
+          marginVertical && `marginVertical: ${marginVertical}`};
   ${({flex}) => flex && `flex: ${flex}`};
   ${({height}) => height && `height: ${height}`};
 `;

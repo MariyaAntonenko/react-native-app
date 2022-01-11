@@ -17,7 +17,10 @@ export const QrCodeResultScreen = ({
       width={'100%'}
       backgroundColor={'white'}
       pt={StatusBar.currentHeight}>
-      <StyledButton padding={'3%'} onPress={onNavigationStateChange}>
+      <StyledButton
+        paddingVertical={'10px'}
+        paddingHorizontal={'10px'}
+        onPress={onNavigationStateChange}>
         <StyledText fontWeight={'600'} fontSize={'20px'} color={'red'}>
           {isValidCode ? 'Go Back' : 'Try again'}
         </StyledText>
@@ -25,7 +28,7 @@ export const QrCodeResultScreen = ({
       {isValidCode ? (
         <WebView source={{uri: `${result}`}} />
       ) : (
-        <Block alignItems={'center'} justifyContent={'center'} pt={'50%'}>
+        <Block alignItems={'center'} justifyContent={'center'} pt={'200px'}>
           <StyledText fontSize={'30px'} color={'red'}>
             Not valid QR
           </StyledText>

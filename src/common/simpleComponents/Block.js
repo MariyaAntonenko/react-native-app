@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
-import {margin, padding, border} from './mixins/mixins';
+import {marginMixins, paddingMixins, borderMixins} from './mixins/mixins';
 import PropTypes, {string, number} from 'prop-types';
 
 export const Block = styled.View`
-  ${margin};
-  ${padding};
-  ${border}
+  ${marginMixins};
+  ${paddingMixins};
+  ${borderMixins};
   ${({paddingHorizontal}) =>
     paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
   ${({paddingVertical}) =>

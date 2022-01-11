@@ -14,7 +14,7 @@ export const ModalScreen = () => {
   return (
     <SafeAreaView pt={StatusBar.currentHeight} flex={1}>
       <Block flex={1} alignItems={'center'} justifyContent={'center'}>
-        <StyledButton padding={'2%'} onPress={toggleModal}>
+        <StyledButton onPress={toggleModal}>
           <StyledText fontSize={'40px'}>Open me:)</StyledText>
         </StyledButton>
       </Block>

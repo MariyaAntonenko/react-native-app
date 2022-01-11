@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
-import {margin, padding, border} from './mixins/mixins';
+import {marginMixins, paddingMixins, borderMixins} from './mixins/mixins';
 import PropTypes, {number, string} from 'prop-types';
 
 export const StyledButton = styled.TouchableOpacity`
-  ${margin};
-  ${padding};
-  ${border};
+  ${marginMixins};
+  ${paddingMixins};
+  ${borderMixins};
   ${({paddingHorizontal}) =>
     paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
   ${({paddingVertical}) =>
@@ -40,7 +40,6 @@ StyledButton.propTypes = {
   paddingVertical: string,
   margin: string,
   padding: string,
-  border: string,
   flex: number,
   backgroundColor: string,
   display: string,
@@ -49,6 +48,7 @@ StyledButton.propTypes = {
   alignItems: string,
   width: string,
   height: string,
+  border: string,
   borderRadius: string,
   boxShadow: string,
   outline: string,

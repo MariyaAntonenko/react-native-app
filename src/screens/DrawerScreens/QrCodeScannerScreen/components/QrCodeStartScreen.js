@@ -9,10 +9,11 @@ export const QrCodeStartScreen = ({startScan}) => {
     <Block alignItems={'center'} justifyContent={'center'}>
       <StyledButton onPress={startScan} alignItems={'center'}>
         <Block
-          padding={'5%'}
+          paddingHorizontal={'15px'}
+          paddingVertical={'15px'}
           backgroundColor={'white'}
           borderRadius={'9px'}
-          margin={'3%'}>
+          marginVertical={'15px'}>
           <QrCodeIcon width={'120px'} height={'120px'} fill={'black'} />
         </Block>
         <StyledText color={'white'} fontSize={'15px'}>

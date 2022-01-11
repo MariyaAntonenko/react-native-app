@@ -40,7 +40,8 @@ export const PlayerRepeatMode = () => {
       flexDirection={'row'}
       justifyContent={'space-around'}
       width={'100%'}
-      padding={'10%'}>
+      paddingHorizontal={'20px'}
+      paddingVertical={'30px'}>
       <StyledButton onPress={onToggleRepeatMode}>
         {RepeatMode[repeatSongMode] && <RepeatModeIcon />}
       </StyledButton>

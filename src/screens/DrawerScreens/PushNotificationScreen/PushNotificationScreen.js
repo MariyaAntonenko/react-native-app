@@ -16,7 +16,8 @@ export const PushNotificationScreen = () => {
             onPress={button.notificationFunction}
             activeOpacity={0.3}
             border={`1px solid ${button.color}`}
-            padding={'2%'}
+            paddingVertical={'10px'}
+            paddingHorizontal={'10px'}
             borderRadius={'6px'}>
             <StyledText
               fontWeight={'600'}
