@@ -15,6 +15,7 @@ export default {
     download: 'Descargar',
     audio: 'Reproductor de música',
     qr: 'Escáner de código QR',
+    push: 'Notificaciones Push',
   },
   articles: {
     cancelButton: 'Cancelar',

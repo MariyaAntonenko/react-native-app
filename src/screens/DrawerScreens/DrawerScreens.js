@@ -15,6 +15,7 @@ import {FlashMessageScreen} from './FlashMessageScreen/FlashMessageScreen';
 import {DownloadScreen} from './DownloadScreen/DownloadScreen';
 import {AudioPlayerScreen} from './AudioPlayerScreen/AudioPlayerScreen';
 import {QrCodeScannerScreen} from './QrCodeScannerScreen/QrCodeScannerScreen';
+import {PushNotificationScreen} from './PushNotificationScreen/PushNotificationScreen';
 import {Platform} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
@@ -25,7 +26,7 @@ const Drawer = createDrawerNavigator();
 export const DrawerScreens = () => {
   return (
     <Drawer.Navigator
-      initialRouteName={strings.screens.qr}
+      initialRouteName={strings.screens.push}
       drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen
         name={strings.screens.articles}
@@ -104,6 +105,11 @@ export const DrawerScreens = () => {
       <Drawer.Screen
         name={strings.screens.qr}
         component={QrCodeScannerScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.push}
+        component={PushNotificationScreen}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>
