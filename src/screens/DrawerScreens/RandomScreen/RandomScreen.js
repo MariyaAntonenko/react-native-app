@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useMemo} from 'react';
+import React from 'react';
+import {useCounterIncrementer} from './components/hooks/hookForRandomScreen';
 import {Header} from '../../../common/complicatedComponents/Header/Header';
 import {
   headerConstsForRandomPage,
@@ -9,26 +10,6 @@ import {Footer} from '../../../common/complicatedComponents/Footer/Footer';
 import {Block} from '../../../common/simpleComponents/Block';
 import {ErrorButton} from './components/ErrorButton';
 import {strings} from '../../../common/complicatedComponents/Context';
-
-const useCounterIncrementer = () => {
-  const [count, setCount] = useState(0);
-  const [isError, setError] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      let value = Math.random() > 0.5;
-      if (value) {
-        setCount(prev => prev + 1);
-      }
-      setError(!value);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const value = useMemo(() => ({count, isError}), [count, isError]);
-
-  return value;
-};
 
 const footerConsts = footerConstsForArticlesScreen(strings);
 

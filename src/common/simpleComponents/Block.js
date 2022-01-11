@@ -6,6 +6,14 @@ export const Block = styled.View`
   ${margin};
   ${padding};
   ${border}
+  ${({paddingHorizontal}) =>
+    paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
+  ${({paddingVertical}) =>
+    paddingVertical && `paddingVertical: ${paddingVertical}`};
+  ${({marginHorizontal}) =>
+    marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
+  ${({marginVertical}) =>
+    marginVertical && `marginVertical: ${marginVertical}`};
   ${({backgroundColor}) =>
     backgroundColor && `background-color: ${backgroundColor}`};
   ${({display}) => display && `display: ${display}`};
@@ -25,6 +33,10 @@ export const Block = styled.View`
 `;
 
 Block.propTypes = {
+  marginHorizontal: string,
+  marginVertical: string,
+  paddingHorizontal: string,
+  paddingVertical: string,
   margin: string,
   padding: string,
   border: string,

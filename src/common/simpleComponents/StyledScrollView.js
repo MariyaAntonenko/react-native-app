@@ -7,6 +7,14 @@ export const StyledScrollView = styled.ScrollView`
   ${margin};
   ${padding};
   ${border};
+  ${({paddingHorizontal}) =>
+    paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
+  ${({paddingVertical}) =>
+    paddingVertical && `paddingVertical: ${paddingVertical}`};
+  ${({marginHorizontal}) =>
+    marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
+  ${({marginVertical}) =>
+    marginVertical && `marginVertical: ${marginVertical}`};
   ${({display}) => display && `display: ${display}`};
   ${({flex}) => flex && `flex: ${flex}`};
   ${({flexWrap}) => flexWrap && ` flexWrap: ${flexWrap}`};
@@ -17,6 +25,10 @@ export const StyledScrollView = styled.ScrollView`
 `;
 
 StyledScrollView.propTypes = {
+  marginHorizontal: string,
+  marginVertical: string,
+  paddingHorizontal: string,
+  paddingVertical: string,
   margin: string,
   padding: string,
   border: string,

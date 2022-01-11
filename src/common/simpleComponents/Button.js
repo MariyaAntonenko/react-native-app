@@ -6,6 +6,14 @@ export const StyledButton = styled.TouchableOpacity`
   ${margin};
   ${padding};
   ${border};
+  ${({paddingHorizontal}) =>
+    paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
+  ${({paddingVertical}) =>
+    paddingVertical && `paddingVertical: ${paddingVertical}`};
+  ${({marginHorizontal}) =>
+    marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
+  ${({marginVertical}) =>
+    marginVertical && `marginVertical: ${marginVertical}`};
   ${({flex}) => flex && `flex: ${flex}`};
   ${({backgroundColor}) =>
     backgroundColor && `background-color: ${backgroundColor}`};
@@ -26,6 +34,10 @@ export const StyledButton = styled.TouchableOpacity`
 `;
 
 StyledButton.propTypes = {
+  marginHorizontal: string,
+  marginVertical: string,
+  paddingHorizontal: string,
+  paddingVertical: string,
   margin: string,
   padding: string,
   border: string,

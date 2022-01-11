@@ -6,22 +6,18 @@ import TrackPlayer, {useProgress} from 'react-native-track-player';
 
 export const PlayerProgress = () => {
   const [sliderValue, setSliderValue] = useState(0);
-  const [isSeeking, setIsSeeking] = useState(false);
 
   const progress = useProgress();
 
   useEffect(() => {
-    if (!isSeeking && progress.position && progress.duration) {
+    if (progress.position && progress.duration) {
       setSliderValue(progress.position / progress.duration);
     }
   }, [progress.position, progress.duration]);
-  const slidingStarted = () => {
-    setIsSeeking(true);
-  };
+
   const slidingCompleted = async value => {
     await TrackPlayer.seekTo(value * progress.duration);
     setSliderValue(value);
-    setIsSeeking(false);
   };
   return (
     <>
@@ -33,7 +29,6 @@ export const PlayerProgress = () => {
           thumbTintColor={'blue'}
           minimumTrackTintColor={'yellow'}
           maximumTrackTintColor={'#ffff'}
-          onSlidingStart={slidingStarted}
           onSlidingComplete={slidingCompleted}
         />
       </Block>

@@ -11,7 +11,7 @@ export const SwipeList = ({data, renderItem}) => {
 
   const handleKey = useCallback(item => item.id, []);
 
-  const handleDelete = (item, rowData, rowMap) => {
+  const handleDelete = (item, rowData, rowMap) => () => {
     if (rowMap[rowData.item.id]) {
       rowMap[rowData.item.id].closeRow();
       setDataList(() => [...dataList.filter(elem => elem.id !== item)]);
@@ -31,7 +31,7 @@ export const SwipeList = ({data, renderItem}) => {
           justifyContent={'center'}
           alignItems={'center'}
           backgroundColor={'red'}
-          onPress={() => handleDelete(rowData.item.id, rowData, rowMap)}>
+          onPress={handleDelete(rowData.item.id, rowData, rowMap)}>
           <StyledText color={'white'}>
             {strings.articles.swipeTodeleteButton}
           </StyledText>
@@ -48,7 +48,7 @@ export const SwipeList = ({data, renderItem}) => {
           rowMap[rowKey]?.closeRow();
         }
       }, 3000),
-    [handleDelete],
+    [],
   );
 
   if (!dataList.length) {

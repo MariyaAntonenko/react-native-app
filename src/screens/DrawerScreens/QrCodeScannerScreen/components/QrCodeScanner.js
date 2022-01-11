@@ -8,7 +8,6 @@ import {StyledButton} from '../../../../common/simpleComponents/Button';
 export const QrCodeScanner = ({onSuccess, cancelScan}) => {
   return (
     <QRCodeScanner
-      cameraStyle={{}}
       cameraProps={{
         rectOfInterest: {x: 0.25, y: 0.25, width: 0.5, height: 0.5},
         cameraViewDimensions: {width: 100, height: 100},
