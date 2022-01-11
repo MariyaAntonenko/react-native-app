@@ -2,6 +2,7 @@ import React from 'react';
 import {ArticlesScreen} from './ArticlesScreen/ArticlesScreen';
 import {SummaryScreen} from './SummaryScreen/SummaryScreen';
 import {LoginScreen} from './LoginScreen/LoginScreen';
+import {ChartScreen} from './ChartScreen/ChartScreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();
@@ -23,6 +24,11 @@ export const DrawerScreens = () => {
         name="Login"
         options={{headerShown: false}}
         component={LoginScreen}
+      />
+      <Drawer.Screen
+        name="Chart"
+        options={{headerShown: false}}
+        component={ChartScreen}
       />
     </Drawer.Navigator>
   );
