@@ -16,6 +16,7 @@ export default {
     audio: 'Reproductor de música',
     qr: 'Escáner de código QR',
     push: 'Notificaciones Push',
+    gps: 'GPS',
   },
   articles: {
     cancelButton: 'Cancelar',

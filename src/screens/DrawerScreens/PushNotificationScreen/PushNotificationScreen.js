@@ -4,7 +4,7 @@ import {StatusBar} from 'react-native';
 import {Block} from '../../../common/simpleComponents/Block';
 import {StyledButton} from '../../../common/simpleComponents/Button';
 import {StyledText} from '../../../common/simpleComponents/Text';
-import {notificationButtons} from './PushNotification';
+import {notificationButtons} from './components/PushNotification';
 
 export const PushNotificationScreen = () => {
   return (

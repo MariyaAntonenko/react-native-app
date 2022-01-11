@@ -9,14 +9,13 @@ import {ModalScreen} from './ModalScreen/ModalScreen';
 import {WebViewScreen} from './WebViewScreen/WebViewScreen';
 import {MapScreen} from './MapScreen/MapScreen';
 import {CameraScreen} from './CameraScreen/CameraScreen';
-import {FingerprintScreenIos} from './FingerprintScreen/FingerprintScreen.ios';
-import {FingerprintScreenAndroid} from './FingerprintScreen/FingerprintScreen.android';
+import {FingerprintScreen} from './FingerprintScreen/FingerprintScreen';
 import {FlashMessageScreen} from './FlashMessageScreen/FlashMessageScreen';
 import {DownloadScreen} from './DownloadScreen/DownloadScreen';
 import {AudioPlayerScreen} from './AudioPlayerScreen/AudioPlayerScreen';
 import {QrCodeScannerScreen} from './QrCodeScannerScreen/QrCodeScannerScreen';
 import {PushNotificationScreen} from './PushNotificationScreen/PushNotificationScreen';
-import {Platform} from 'react-native';
+import {GPSScreen} from './GPSScreen/GPSScreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
 import {strings} from '../../common/complicatedComponents/Context';
@@ -26,7 +25,7 @@ const Drawer = createDrawerNavigator();
 export const DrawerScreens = () => {
   return (
     <Drawer.Navigator
-      initialRouteName={strings.screens.push}
+      initialRouteName={strings.screens.gps}
       drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen
         name={strings.screens.articles}
@@ -80,11 +79,7 @@ export const DrawerScreens = () => {
       />
       <Drawer.Screen
         name={strings.screens.fingerprint}
-        component={
-          Platform.OS === 'ios'
-            ? FingerprintScreenIos
-            : FingerprintScreenAndroid
-        }
+        component={FingerprintScreen}
         options={{headerShown: false}}
       />
       <Drawer.Screen
@@ -110,6 +105,11 @@ export const DrawerScreens = () => {
       <Drawer.Screen
         name={strings.screens.push}
         component={PushNotificationScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.gps}
+        component={GPSScreen}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>

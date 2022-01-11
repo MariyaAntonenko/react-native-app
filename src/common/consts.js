@@ -238,6 +238,10 @@ export const drawerItemConsts = strings => {
       id: 16,
       label: strings.screens.push,
     },
+    {
+      id: 17,
+      label: strings.screens.gps,
+    },
   ];
 };
 export const markersConsts = [
