@@ -6,6 +6,14 @@ export const StyledButton = styled.TouchableOpacity`
   ${marginMixins};
   ${paddingMixins};
   ${borderMixins};
+  ${({paddingHorizontal}) =>
+    paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
+  ${({paddingVertical}) =>
+    paddingVertical && `paddingVertical: ${paddingVertical}`};
+  ${({marginHorizontal}) =>
+    marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
+  ${({marginVertical}) =>
+    marginVertical && `marginVertical: ${marginVertical}`};
   ${({flex}) => flex && `flex: ${flex}`};
   ${({backgroundColor}) =>
     backgroundColor && `background-color: ${backgroundColor}`};
@@ -18,9 +26,20 @@ export const StyledButton = styled.TouchableOpacity`
   ${({height}) => height && `height: ${height}`};
   ${({boxShadow}) => boxShadow && `box-shadow: ${boxShadow}`};
   ${({outline}) => outline && `outline: ${outline}`};
+  ${({position}) => position && `position: ${position}`};
+  ${({top}) => top && `top: ${top}`};
+  ${({left}) => left && `left: ${left}`};
+  ${({right}) => right && `right: ${right}`};
+  ${({bottom}) => bottom && `bottom: ${bottom}`};
 `;
 
 StyledButton.propTypes = {
+  marginHorizontal: string,
+  marginVertical: string,
+  paddingHorizontal: string,
+  paddingVertical: string,
+  margin: string,
+  padding: string,
   flex: number,
   backgroundColor: string,
   display: string,
@@ -33,4 +52,8 @@ StyledButton.propTypes = {
   borderRadius: string,
   boxShadow: string,
   outline: string,
+  position: string,
+  top: string,
+  left: string,
+  right: string,
 };

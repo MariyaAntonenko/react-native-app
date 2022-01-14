@@ -3,6 +3,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {ArticlesList} from '../../../ArticlesScreen/components/ArticlesList';
 import {CartonsList} from '../CartonsList';
 import {TabBar} from './TabBar';
+import {strings} from '../../../../../common/complicatedComponents/Context';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -11,8 +12,14 @@ export const TabsArea = () => {
     <Tab.Navigator
       screenOptions={{swipeEnabled: false}}
       tabBar={props => <TabBar {...props} />}>
-      <Tab.Screen name="Cartons" component={CartonsList} />
-      <Tab.Screen name="Articles" component={ArticlesList} />
+      <Tab.Screen
+        name={strings.summary.tabsCartonsName}
+        component={CartonsList}
+      />
+      <Tab.Screen
+        name={strings.summary.tabsArticlesName}
+        component={ArticlesList}
+      />
     </Tab.Navigator>
   );
 };
