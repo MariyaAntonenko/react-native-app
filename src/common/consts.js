@@ -262,24 +262,65 @@ export const loginFormConsts = [
 export const markersConsts = [
   {
     id: 1,
+    title: 'New York',
     coordinate: {
       latitude: 47.8328,
       longitude: 35.131,
     },
+    url: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Statue_of_liberty_01.jpg',
+    content:
+      'ducimus eaque error est fuga maxime quaerat quisquam repudiandae? lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit.Culpa deleniti error est in neque possimus similique. Architecto at,',
   },
   {
     id: 2,
+    title: 'Paris',
     coordinate: {
       latitude: 47.8358,
       longitude: 35.121,
     },
+    url: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F02%2Feiffel-tower-paris-france-EIFFEL0217.jpg',
+    content:
+      'lorem Lorem ipsum ldldl,d,d,,d,d,d,d,,d,d,d,d,d,,,d,,d,d,d,d,d,lkmflkmflksmfclksmfc`klsfm`klafmkla`mf`lksmfc`klsf`klsf`klfsmd,fksd,.nm,dfsmfmndggggggggdhahbdahbhabahbahbjh dolor sit amet ,consectetur adipisicing elit. Culpa deleniti error est in nequepossimus similique. Architecto at, consequatur delectus dignissimos ducimus eaque error est fuga maxime quaerat quisquam repudiandae? lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deleniti error est in neque possimus similique. Architecto at, consequatur delectus dignissimos ducimus eaque error est fuga maxime quaerat quisquam repudiandae?',
   },
   {
     id: 3,
+    title: 'Pisa',
     coordinate: {
       latitude: 47.831,
       longitude: 35.141,
     },
+    url: 'https://upload.wikimedia.org/wikipedia/commons/6/66/The_Leaning_Tower_of_Pisa_SB.jpeg',
+    content: 'lorem Lorem ipsumconsequatur ',
+  },
+  {
+    id: 4,
+    title: 'Moscow',
+    coordinate: {
+      latitude: 47.844,
+      longitude: 35.146,
+    },
+    url: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Moscow_StBasilCathedral_d28.jpg',
+    content: 'lorem Lorem ipsumconsequatur ',
+  },
+  {
+    id: 5,
+    title: 'Tokio',
+    coordinate: {
+      latitude: 47.8442,
+      longitude: 35.13,
+    },
+    url: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg',
+    content: 'lorem Lorem ipsumconsequatur ',
+  },
+  {
+    id: 6,
+    title: 'Dubai',
+    coordinate: {
+      latitude: 47.853,
+      longitude: 35.111,
+    },
+    url: 'https://upload.wikimedia.org/wikipedia/en/9/93/Burj_Khalifa.jpg',
+    content: 'lorem Lorem ipsumconsequatur ',
   },
 ];
 export const playList = [

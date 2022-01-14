@@ -4,6 +4,7 @@ import PropTypes, {string} from 'prop-types';
 
 export const Image = styled.Image`
   ${marginMixins};
+  ${({resizeMode}) => resizeMode && `resizeMode: ${resizeMode}`};
   ${({paddingHorizontal}) =>
     paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
   ${({paddingVertical}) =>
@@ -17,6 +18,7 @@ export const Image = styled.Image`
 `;
 
 Image.propTypes = {
+  resizeMode: string,
   marginHorizontal: string,
   marginVertical: string,
   paddingHorizontal: string,

@@ -1,13 +1,12 @@
 import styled from 'styled-components/native';
+import {Animated} from 'react-native';
 import {marginMixins, paddingMixins, borderMixins} from './mixins/mixins';
 import PropTypes, {string, number} from 'prop-types';
 
-export const Block = styled.View`
+export const AnimatedScrollView = styled(Animated.ScrollView)`
   ${marginMixins};
   ${paddingMixins};
   ${borderMixins};
-  ${({zIndex}) => zIndex && `zIndex: ${zIndex}`};
-  ${({flexWrap}) => flexWrap && `flexWrap: ${flexWrap}`};
   ${({paddingHorizontal}) =>
     paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
   ${({paddingVertical}) =>
@@ -38,9 +37,7 @@ export const Block = styled.View`
   ${({boxShadow}) => boxShadow && `box-shadow: ${boxShadow}`};
 `;
 
-Block.propTypes = {
-  zIndex: number,
-  flexWrap: string,
+AnimatedScrollView.propTypes = {
   marginHorizontal: string,
   marginVertical: string,
   paddingHorizontal: string,

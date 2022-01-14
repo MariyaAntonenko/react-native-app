@@ -25,7 +25,7 @@ const Drawer = createDrawerNavigator();
 export const DrawerScreens = () => {
   return (
     <Drawer.Navigator
-      initialRouteName={strings.screens.gps}
+      initialRouteName={strings.screens.map}
       drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen
         name={strings.screens.articles}
