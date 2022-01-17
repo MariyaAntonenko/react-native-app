@@ -13,7 +13,7 @@ export const LoginForm = () => {
     resetForm();
   };
   return (
-    <Block pt={'10%'} pl={'10%'} pr={'10%'}>
+    <Block paddingHorizontal={'40px'} paddingVertical={'40px'}>
       <Formik
         initialValues={{
           username: '',
@@ -46,7 +46,7 @@ export const LoginForm = () => {
             <StyledButton
               disabled={!isValid}
               onPress={handleSubmit}
-              mt={'10%'}
+              mt={'30px'}
               backgroundColor={isValid ? '#013556' : 'gray'}
               height={'55px'}
               display={'flex'}

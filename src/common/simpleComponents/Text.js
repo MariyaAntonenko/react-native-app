@@ -4,6 +4,14 @@ import PropTypes, {string} from 'prop-types';
 
 export const StyledText = styled.Text`
   ${marginMixins};
+  ${({paddingHorizontal}) =>
+          paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
+  ${({paddingVertical}) =>
+          paddingVertical && `paddingVertical: ${paddingVertical}`};
+  ${({marginHorizontal}) =>
+          marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
+  ${({marginVertical}) =>
+          marginVertical && `marginVertical: ${marginVertical}`};
   ${({color}) => color && `color: ${color}`};
   ${({fontSize}) => fontSize && `font-size: ${fontSize}`};
   ${({fontWeight}) => fontWeight && `font-weight: ${fontWeight}`};
@@ -12,6 +20,10 @@ export const StyledText = styled.Text`
 `;
 
 StyledText.propTypes = {
+  marginHorizontal: string,
+  marginVertical: string,
+  paddingHorizontal: string,
+  paddingVertical: string,
   color: string,
   fontSize: string,
   fontWeight: string,
