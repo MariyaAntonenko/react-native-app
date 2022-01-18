@@ -5,13 +5,13 @@ import PropTypes, {string} from 'prop-types';
 export const StyledText = styled.Text`
   ${marginMixins};
   ${({paddingHorizontal}) =>
-          paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
+    paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
   ${({paddingVertical}) =>
-          paddingVertical && `paddingVertical: ${paddingVertical}`};
+    paddingVertical && `paddingVertical: ${paddingVertical}`};
   ${({marginHorizontal}) =>
-          marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
+    marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
   ${({marginVertical}) =>
-          marginVertical && `marginVertical: ${marginVertical}`};
+    marginVertical && `marginVertical: ${marginVertical}`};
   ${({color}) => color && `color: ${color}`};
   ${({fontSize}) => fontSize && `font-size: ${fontSize}`};
   ${({fontWeight}) => fontWeight && `font-weight: ${fontWeight}`};
