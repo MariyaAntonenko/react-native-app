@@ -242,6 +242,10 @@ export const drawerItemConsts = strings => {
       id: 17,
       label: strings.screens.gps,
     },
+    {
+      id: 18,
+      label: strings.screens.date,
+    },
   ];
 };
 export const loginFormConsts = [

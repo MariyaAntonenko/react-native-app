@@ -17,6 +17,7 @@ export default {
     qr: 'QR-Code Scanner',
     push: 'Push Notification',
     gps: 'GPS',
+    date: 'Date picker',
   },
   articles: {
     cancelButton: 'Cancel',
