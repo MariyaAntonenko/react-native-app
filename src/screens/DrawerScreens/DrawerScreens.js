@@ -27,91 +27,91 @@ export const DrawerScreens = () => {
     <Drawer.Navigator
       initialRouteName={strings.screens.camera}
       drawerContent={props => <DrawerContent {...props} />}>
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.articles}*/}
-      {/*  component={ArticlesScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.summary}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*  component={SummaryScreen}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.login}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*  component={LoginScreen}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.chart}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*  component={ChartScreen}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.random}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*  component={RandomScreen}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.signature}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*  component={SignatureScreen}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.modal}*/}
-      {/*  component={ModalScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.webview}*/}
-      {/*  component={WebViewScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.map}*/}
-      {/*  component={MapScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
+      <Drawer.Screen
+        name={strings.screens.articles}
+        component={ArticlesScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.summary}
+        options={{headerShown: false}}
+        component={SummaryScreen}
+      />
+      <Drawer.Screen
+        name={strings.screens.login}
+        options={{headerShown: false}}
+        component={LoginScreen}
+      />
+      <Drawer.Screen
+        name={strings.screens.chart}
+        options={{headerShown: false}}
+        component={ChartScreen}
+      />
+      <Drawer.Screen
+        name={strings.screens.random}
+        options={{headerShown: false}}
+        component={RandomScreen}
+      />
+      <Drawer.Screen
+        name={strings.screens.signature}
+        options={{headerShown: false}}
+        component={SignatureScreen}
+      />
+      <Drawer.Screen
+        name={strings.screens.modal}
+        component={ModalScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.webview}
+        component={WebViewScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.map}
+        component={MapScreen}
+        options={{headerShown: false}}
+      />
       <Drawer.Screen
         name={strings.screens.camera}
         component={CameraScreen}
         options={{headerShown: false}}
       />
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.fingerprint}*/}
-      {/*  component={FingerprintScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.flashmessage}*/}
-      {/*  component={FlashMessageScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.download}*/}
-      {/*  component={DownloadScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.audio}*/}
-      {/*  component={AudioPlayerScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.qr}*/}
-      {/*  component={QrCodeScannerScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.push}*/}
-      {/*  component={PushNotificationScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
-      {/*<Drawer.Screen*/}
-      {/*  name={strings.screens.gps}*/}
-      {/*  component={GPSScreen}*/}
-      {/*  options={{headerShown: false}}*/}
-      {/*/>*/}
+      <Drawer.Screen
+        name={strings.screens.fingerprint}
+        component={FingerprintScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.flashmessage}
+        component={FlashMessageScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.download}
+        component={DownloadScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.audio}
+        component={AudioPlayerScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.qr}
+        component={QrCodeScannerScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.push}
+        component={PushNotificationScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.gps}
+        component={GPSScreen}
+        options={{headerShown: false}}
+      />
     </Drawer.Navigator>
   );
 };
