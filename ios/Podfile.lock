@@ -416,6 +416,8 @@ PODS:
   - RNScreens (3.10.1):
     - React-Core
     - React-RCTImage
+  - RNSensors (7.3.3):
+    - React-Core
   - RNSVG (12.1.1):
     - React
   - SwiftAudioEx (0.14.5)
@@ -500,6 +502,7 @@ DEPENDENCIES:
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSensors (from `../node_modules/react-native-sensors`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - TouchID (from `../node_modules/react-native-touch-id`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -625,6 +628,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSensors:
+    :path: "../node_modules/react-native-sensors"
   RNSVG:
     :path: "../node_modules/react-native-svg"
   TouchID:
@@ -697,6 +702,7 @@ SPEC CHECKSUMS:
   RNPermissions: f7ebe52db07c00901127966ca080b4ec6a6ceb0a
   RNReanimated: 65583befd5706cc9c86ae9a081786181ced37b93
   RNScreens: 522705f2e5c9d27efb17f24aceb2bf8335bc7b8e
+  RNSensors: 7baffb62308e167902b28e5f74e072804bfc1ad1
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   SwiftAudioEx: bfaff9894c885aded7edfb0793e25165d55053d4
   TouchID: ba4c656d849cceabc2e4eef722dea5e55959ecf4

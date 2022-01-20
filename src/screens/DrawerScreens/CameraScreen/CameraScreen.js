@@ -1,5 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useCamera} from 'react-native-camera-hooks';
+import {
+  accelerometer,
+  setUpdateIntervalForType,
+  SensorTypes,
+} from 'react-native-sensors';
 import {ScrollView} from 'react-native';
 import CameraRoll from '@react-native-community/cameraroll';
 import {RNCamera} from 'react-native-camera';
@@ -8,6 +13,19 @@ import {Image} from '../../../common/simpleComponents/Image';
 import {CameraButtons} from './components/CameraButtons';
 
 export const CameraScreen = () => {
+  const [value, setValue] = useState({x: 0, y: 0});
+  const pi = Math.PI;
+  let degreeValue = Math.round((Math.atan2(value.x, value.y) * 180) / pi);
+  useEffect(() => {
+    setUpdateIntervalForType(SensorTypes.accelerometer, 100);
+    let subscription = accelerometer.subscribe(({x, y}) => {
+      setValue({x: x, y: y});
+    });
+    return () => {
+      subscription = null;
+    };
+  }, []);
+
   const [photos, setPhotos] = useState([]);
   const [{cameraRef, type, flash}, {toggleFlash, toggleFacing, takePicture}] =
     useCamera();
@@ -30,9 +48,17 @@ export const CameraScreen = () => {
       <RNCamera
         ref={cameraRef}
         type={type}
-        style={{flex: 1}}
-        flashMode={flash}
-      />
+        style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}
+        flashMode={flash}>
+        <Block
+          style={{
+            transform: [{rotate: `${degreeValue}deg`}],
+          }}
+          borderBottomWidth={'3px'}
+          borderBottomColor={'red'}
+          width={'300px'}
+        />
+      </RNCamera>
       <CameraButtons
         flash={flash}
         captureHandle={captureHandle}
