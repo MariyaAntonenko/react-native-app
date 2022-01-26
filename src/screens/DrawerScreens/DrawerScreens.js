@@ -26,7 +26,7 @@ const Drawer = createDrawerNavigator();
 export const DrawerScreens = () => {
   return (
     <Drawer.Navigator
-      initialRouteName={strings.screens.date}
+      initialRouteName={strings.screens.camera}
       drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen
         name={strings.screens.articles}

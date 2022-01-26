@@ -1,12 +1,12 @@
 import React from 'react';
-import {Block} from '../../../../common/simpleComponents/Block';
-import {StyledButton} from '../../../../common/simpleComponents/Button';
-import RotateCamera from '../../../../assets/icons/rotateCamera.svg';
-import Snap from '../../../../assets/icons/snapCamera.svg';
-import FlashOn from '../../../../assets/icons/flashOn.svg';
-import FlashOff from '../../../../assets/icons/flashOff.svg';
-import FlashTorch from '../../../../assets/icons/flashTorch.svg';
-import FlashAuto from '../../../../assets/icons/flashAuto.svg';
+import {Block} from '../../../../../../common/simpleComponents/Block';
+import {StyledButton} from '../../../../../../common/simpleComponents/Button';
+import RotateCamera from '../../../../../../assets/icons/rotateCamera.svg';
+import Snap from '../../../../../../assets/icons/snapCamera.svg';
+import FlashOn from '../../../../../../assets/icons/flashOn.svg';
+import FlashOff from '../../../../../../assets/icons/flashOff.svg';
+import FlashTorch from '../../../../../../assets/icons/flashTorch.svg';
+import FlashAuto from '../../../../../../assets/icons/flashAuto.svg';
 
 export const CameraButtons = ({
   flash,

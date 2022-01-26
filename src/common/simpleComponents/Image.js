@@ -26,4 +26,8 @@ Image.propTypes = {
   margin: string,
   width: string,
   height: string,
+  mt: string,
+  mb: string,
+  mr: string,
+  ml: string,
 };

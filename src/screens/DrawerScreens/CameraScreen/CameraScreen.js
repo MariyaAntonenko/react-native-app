@@ -1,82 +1,26 @@
-import React, {useEffect, useState} from 'react';
-import {useCamera} from 'react-native-camera-hooks';
-import {
-  accelerometer,
-  setUpdateIntervalForType,
-  SensorTypes,
-} from 'react-native-sensors';
-import {ScrollView} from 'react-native';
-import CameraRoll from '@react-native-community/cameraroll';
-import {RNCamera} from 'react-native-camera';
-import {Block} from '../../../common/simpleComponents/Block';
-import {Image} from '../../../common/simpleComponents/Image';
-import {CameraButtons} from './components/CameraButtons';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {EditingOfImageStackScreen} from './cameraStackNavigator/cameraStackScreens/EditingOfImageStackScreen';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {UserCameraStackScreen} from './cameraStackNavigator/cameraStackScreens/UserCameraStackScreen';
+
+const Stack = createNativeStackNavigator();
 
 export const CameraScreen = () => {
-  const [value, setValue] = useState({x: 0, y: 0});
-  const pi = Math.PI;
-  let degreeValue = Math.round((Math.atan2(value.x, value.y) * 180) / pi);
-  useEffect(() => {
-    setUpdateIntervalForType(SensorTypes.accelerometer, 100);
-    let subscription = accelerometer.subscribe(({x, y}) => {
-      setValue({x: x, y: y});
-    });
-    return () => {
-      subscription = null;
-    };
-  }, []);
-
-  const [photos, setPhotos] = useState([]);
-  const [{cameraRef, type, flash}, {toggleFlash, toggleFacing, takePicture}] =
-    useCamera();
-  const captureHandle = async () => {
-    try {
-      const data = await takePicture();
-      await CameraRoll.saveToCameraRoll(data.uri, 'photo');
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    CameraRoll.getPhotos({first: 20})
-      .then(res => setPhotos(res.edges))
-      .catch(e => console.log(e));
-  }, [photos]);
-
   return (
-    <Block flex={1}>
-      <RNCamera
-        ref={cameraRef}
-        type={type}
-        style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}
-        flashMode={flash}>
-        <Block
-          style={{
-            transform: [{rotate: `${degreeValue}deg`}],
-          }}
-          borderBottomWidth={'3px'}
-          borderBottomColor={'red'}
-          width={'300px'}
+    <NavigationContainer independent={true}>
+      <Stack.Navigator>
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="Camera"
+          component={UserCameraStackScreen}
         />
-      </RNCamera>
-      <CameraButtons
-        flash={flash}
-        captureHandle={captureHandle}
-        toggleFacing={toggleFacing}
-        toggleFlash={toggleFlash}
-      />
-      <Block flexDirection={'row'} pt={'20px'} pb={'40px'}>
-        <ScrollView horizontal>
-          {photos.map((photo, i) => (
-            <Image
-              key={i}
-              source={{uri: photo.node.image.uri}}
-              width={'100px'}
-              height={'100px'}
-            />
-          ))}
-        </ScrollView>
-      </Block>
-    </Block>
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="Editor"
+          component={EditingOfImageStackScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };

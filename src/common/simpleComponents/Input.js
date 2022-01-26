@@ -7,13 +7,13 @@ export const Input = styled.TextInput`
   ${paddingMixins};
   ${borderMixins};
   ${({paddingHorizontal}) =>
-          paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
+    paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
   ${({paddingVertical}) =>
-          paddingVertical && `paddingVertical: ${paddingVertical}`};
+    paddingVertical && `paddingVertical: ${paddingVertical}`};
   ${({marginHorizontal}) =>
-          marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
+    marginHorizontal && `marginHorizontal: ${marginHorizontal}`};
   ${({marginVertical}) =>
-          marginVertical && `marginVertical: ${marginVertical}`};
+    marginVertical && `marginVertical: ${marginVertical}`};
   ${({backgroundColor}) =>
     backgroundColor && `background-color: ${backgroundColor}`};
   ${({width}) => width && `width: ${width}`};
@@ -37,4 +37,18 @@ Input.propTypes = {
   color: string,
   fontSize: string,
   fontWeight: string,
+  borderBottomWidth: string,
+  borderBottomStyle: string,
+  borderBottomColor: string,
+  borderTopWidth: string,
+  borderTopStyle: string,
+  borderTopColor: string,
+  mt: string,
+  mb: string,
+  mr: string,
+  ml: string,
+  pt: string,
+  pb: string,
+  pr: string,
+  pl: string,
 };

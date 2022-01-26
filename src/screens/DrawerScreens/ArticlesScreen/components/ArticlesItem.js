@@ -1,5 +1,5 @@
 import React from 'react';
-import Arrow from '../../../../assets/icons/arrow.svg';
+import Arrow from '../../../../assets/icons/arrowRight.svg';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import {StyledButton} from '../../../../common/simpleComponents/Button';

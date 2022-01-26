@@ -1,12 +1,11 @@
 import styled from 'styled-components/native';
-import {margin, padding, border} from './mixins/mixins';
+import {marginMixins, paddingMixins, borderMixins} from './mixins/mixins';
 import PropTypes, {string, number} from 'prop-types';
-import {Block} from './Block';
 
 export const StyledScrollView = styled.ScrollView`
-  ${margin};
-  ${padding};
-  ${border};
+  ${marginMixins};
+  ${paddingMixins};
+  ${borderMixins};
   ${({paddingHorizontal}) =>
     paddingHorizontal && `paddingHorizontal: ${paddingHorizontal}`};
   ${({paddingVertical}) =>
@@ -38,4 +37,18 @@ StyledScrollView.propTypes = {
   flexDirection: string,
   justifyContent: string,
   alignItems: string,
+  borderBottomWidth: string,
+  borderBottomStyle: string,
+  borderBottomColor: string,
+  borderTopWidth: string,
+  borderTopStyle: string,
+  borderTopColor: string,
+  mt: string,
+  mb: string,
+  mr: string,
+  ml: string,
+  pt: string,
+  pb: string,
+  pr: string,
+  pl: string,
 };

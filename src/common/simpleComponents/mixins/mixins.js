@@ -1,5 +1,4 @@
 import {css} from 'styled-components';
-import {string} from 'prop-types';
 
 export const marginMixins = css`
   ${({margin}) => margin && `margin: ${margin}`}
@@ -45,27 +44,3 @@ export const borderMixins = css`
   ${({borderLeftColor}) =>
     borderLeftColor && `border-left-color: ${borderLeftColor}`};
 `;
-borderMixins.propTypes = {
-  border: string,
-  borderRadius: string,
-  borderBottomWidth: string,
-  borderBottomStyle: string,
-  borderBottomColor: string,
-  borderTopWidth: string,
-  borderTopStyle: string,
-  borderTopColor: string,
-};
-marginMixins.propTypes = {
-  margin: string,
-  mt: string,
-  mb: string,
-  mr: string,
-  ml: string,
-};
-paddingMixins.propTypes = {
-  padding: string,
-  pt: string,
-  pb: string,
-  pr: string,
-  pl: string,
-};
