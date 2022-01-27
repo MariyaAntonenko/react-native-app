@@ -1,5 +1,4 @@
 import {css} from 'styled-components';
-import {string} from 'prop-types';
 
 export const marginMixins = css`
   ${({margin}) => margin && `margin: ${margin}`}
@@ -17,6 +16,8 @@ export const paddingMixins = css`
 `;
 export const borderMixins = css`
   ${({border}) => border && `border: ${border}`};
+  ${({borderWidth}) => borderWidth && `borderWidth: ${borderWidth}`};
+  ${({borderStyle}) => borderStyle && `borderStyle: ${borderStyle}`};
   ${({borderRadius}) => borderRadius && `border-radius: ${borderRadius}`};
   ${({borderBottomWidth}) =>
     borderBottomWidth && `border-bottom-width: ${borderBottomWidth}`};
@@ -30,28 +31,16 @@ export const borderMixins = css`
     borderTopStyle && `border-top-style: ${borderTopStyle}`};
   ${({borderTopColor}) =>
     borderTopColor && `border-top-color: ${borderTopColor}`};
+  ${({borderRightWidth}) =>
+    borderRightWidth && `border-right-width: ${borderRightWidth}`};
+  ${({borderRightStyle}) =>
+    borderRightStyle && `border-right-style: ${borderRightStyle}`};
+  ${({borderRightColor}) =>
+    borderRightColor && `border-right-color: ${borderRightColor}`};
+  ${({borderLeftWidth}) =>
+    borderLeftWidth && `border-left-width: ${borderLeftWidth}`};
+  ${({borderLeftStyle}) =>
+    borderLeftStyle && `border-left-style: ${borderLeftStyle}`};
+  ${({borderLeftColor}) =>
+    borderLeftColor && `border-left-color: ${borderLeftColor}`};
 `;
-borderMixins.propTypes = {
-  border: string,
-  borderRadius: string,
-  borderBottomWidth: string,
-  borderBottomStyle: string,
-  borderBottomColor: string,
-  borderTopWidth: string,
-  borderTopStyle: string,
-  borderTopColor: string,
-};
-marginMixins.propTypes = {
-  margin: string,
-  mt: string,
-  mb: string,
-  mr: string,
-  ml: string,
-};
-paddingMixins.propTypes = {
-  padding: string,
-  pt: string,
-  pb: string,
-  pr: string,
-  pl: string,
-};

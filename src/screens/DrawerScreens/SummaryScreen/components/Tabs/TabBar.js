@@ -54,7 +54,8 @@ export const TabBar = ({state, descriptors, navigation}) => {
             borderRadius={isFocused ? '8px' : '0'}
             boxShadow={isFocused ? '0 0 10px rgba(0,0,0,0.5)' : 'none'}
             display={'flex'}
-            padding={'2%'}
+            paddingHorizontal={'10px'}
+            paddingVertical={'10px'}
             width={'50%'}
             border={isFocused ? '0.5px solid #EDEDED' : 'none'}
             backgroundColor={isFocused ? 'white' : '#EDEDED'}>
