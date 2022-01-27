@@ -1,10 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {useCamera} from 'react-native-camera-hooks';
-import {
-  accelerometer,
-  setUpdateIntervalForType,
-  SensorTypes,
-} from 'react-native-sensors';
 import {ScrollView} from 'react-native';
 import CameraRoll from '@react-native-community/cameraroll';
 import {RNCamera} from 'react-native-camera';
@@ -61,16 +56,8 @@ export const UserCameraStackScreen = props => {
         ref={cameraRef}
         type={type}
         style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}
-        flashMode={flash}>
-        {/*<Block*/}
-        {/*  style={{*/}
-        {/*    transform: [{rotate: `${degreeValue}deg`}],*/}
-        {/*  }}*/}
-        {/*  borderBottomWidth={'3px'}*/}
-        {/*  borderBottomColor={'red'}*/}
-        {/*  width={'300px'}*/}
-        {/*/>*/}
-      </RNCamera>
+        flashMode={flash}
+      />
       <CameraButtons
         flash={flash}
         captureHandle={captureHandle}
