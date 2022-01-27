@@ -20,6 +20,7 @@ import {DatePickerScreen} from './DatePickerScreen/DatePickerScreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
 import {strings} from '../../common/complicatedComponents/Context';
+import {AccelerometerScreen} from './AccelerometerScreen/AccelerometerScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -116,6 +117,11 @@ export const DrawerScreens = () => {
       <Drawer.Screen
         name={strings.screens.date}
         component={DatePickerScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.accelerometer}
+        component={AccelerometerScreen}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>

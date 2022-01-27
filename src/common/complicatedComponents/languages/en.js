@@ -18,6 +18,7 @@ export default {
     push: 'Push Notification',
     gps: 'GPS',
     date: 'Date picker',
+    accelerometer: 'Accelerometer',
   },
   articles: {
     cancelButton: 'Cancel',

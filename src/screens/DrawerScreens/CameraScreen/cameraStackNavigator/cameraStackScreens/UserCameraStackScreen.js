@@ -18,9 +18,7 @@ import {StyledText} from '../../../../../common/simpleComponents/Text';
 
 export const UserCameraStackScreen = props => {
   const {navigation} = props;
-  const [value, setValue] = useState({x: 0, y: 0});
-  const [startObserveAccelerometer, setStartObserveAccelerometer] =
-    useState(true);
+
   const onOpenGallery = async () => {
     const options = {
       storageOptions: {
@@ -33,23 +31,11 @@ export const UserCameraStackScreen = props => {
     if (result.didCancel) {
       console.log('User has cancel the process');
     } else {
-      navigation.navigate('Editor', {
+      navigation.navigate('Filter', {
         source: result?.assets && result?.assets[0].uri,
       });
     }
   };
-  const pi = Math.PI;
-  let degreeValue = Math.round((Math.atan2(value.x, value.y) * 180) / pi);
-  useEffect(() => {
-    setUpdateIntervalForType(SensorTypes.accelerometer, 100);
-    startObserveAccelerometer &&
-      accelerometer.subscribe(({x, y}) => {
-        setValue({x: x, y: y});
-      });
-    return () => {
-      setStartObserveAccelerometer(false);
-    };
-  }, []);
 
   const [photos, setPhotos] = useState([]);
   const [{cameraRef, type, flash}, {toggleFlash, toggleFacing, takePicture}] =
@@ -76,14 +62,14 @@ export const UserCameraStackScreen = props => {
         type={type}
         style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}
         flashMode={flash}>
-        <Block
-          style={{
-            transform: [{rotate: `${degreeValue}deg`}],
-          }}
-          borderBottomWidth={'3px'}
-          borderBottomColor={'red'}
-          width={'300px'}
-        />
+        {/*<Block*/}
+        {/*  style={{*/}
+        {/*    transform: [{rotate: `${degreeValue}deg`}],*/}
+        {/*  }}*/}
+        {/*  borderBottomWidth={'3px'}*/}
+        {/*  borderBottomColor={'red'}*/}
+        {/*  width={'300px'}*/}
+        {/*/>*/}
       </RNCamera>
       <CameraButtons
         flash={flash}
