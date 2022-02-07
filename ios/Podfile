@@ -13,7 +13,6 @@ target 'new_project' do
     :hermes_enabled => false
   )
 
-
   target 'new_projectTests' do
     inherit! :complete
     # Pods for testing

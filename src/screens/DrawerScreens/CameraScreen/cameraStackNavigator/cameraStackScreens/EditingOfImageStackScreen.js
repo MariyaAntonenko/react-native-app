@@ -68,7 +68,7 @@ export const EditingOfImageStackScreen = () => {
     <SafeAreaView pt={StatusBar.currentHeight}>
       <Block flexDirection={'row'} justifyContent={'space-between'}>
         {editorHeaderNavigationButttons.map(button => (
-          <HeaderNavigation {...button} />
+          <HeaderNavigation {...button} key={button.id} />
         ))}
       </Block>
       <Block justifyContent={'center'} alignItems={'center'}>

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import {marginMixins, paddingMixins, borderMixins} from './mixins/mixins';
-import PropTypes, {number, string} from 'prop-types';
+import PropTypes, {string} from 'prop-types';
 
 export const Input = styled.TextInput`
   ${marginMixins};

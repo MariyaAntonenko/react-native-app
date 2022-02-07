@@ -21,13 +21,14 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './DrawerContent';
 import {strings} from '../../common/complicatedComponents/Context';
 import {AccelerometerScreen} from './AccelerometerScreen/AccelerometerScreen';
+import {InputScreen} from './InputScreen/InputScreen';
 
 const Drawer = createDrawerNavigator();
 
 export const DrawerScreens = () => {
   return (
     <Drawer.Navigator
-      initialRouteName={strings.screens.camera}
+      initialRouteName={strings.screens.input}
       drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen
         name={strings.screens.articles}
@@ -122,6 +123,11 @@ export const DrawerScreens = () => {
       <Drawer.Screen
         name={strings.screens.accelerometer}
         component={AccelerometerScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.input}
+        component={InputScreen}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>

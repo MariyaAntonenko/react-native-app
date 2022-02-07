@@ -250,6 +250,10 @@ export const drawerItemConsts = strings => {
       id: 19,
       label: strings.screens.accelerometer,
     },
+    {
+      id: 20,
+      label: strings.screens.input,
+    },
   ];
 };
 export const loginFormConsts = [

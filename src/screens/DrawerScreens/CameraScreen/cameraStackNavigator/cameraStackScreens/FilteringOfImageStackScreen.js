@@ -128,7 +128,7 @@ export const FilteringOfImageStackScreen = () => {
       <Block>
         <Block flexDirection={'row'} justifyContent={'space-between'}>
           {filterHeaderNavigationButttons.map(button => (
-            <HeaderNavigation {...button} />
+            <HeaderNavigation {...button} key={button.id} />
           ))}
         </Block>
         <Block alignItems={'center'}>

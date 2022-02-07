@@ -4,7 +4,6 @@ import {StyledButton} from '../../../../../../common/simpleComponents/Button';
 import {StyledText} from '../../../../../../common/simpleComponents/Text';
 
 export const HeaderNavigation = ({
-  id,
   Icon,
   arrow,
   buttonText,
@@ -12,7 +11,6 @@ export const HeaderNavigation = ({
 }) => {
   return (
     <StyledButton
-      key={id}
       onPress={onPressFunction}
       paddingVertical={'5px'}
       paddingHorizontal={'10px'}

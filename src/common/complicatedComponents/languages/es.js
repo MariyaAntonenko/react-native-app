@@ -19,6 +19,7 @@ export default {
     gps: 'GPS',
     date: 'Selector de fechas',
     accelerometer: 'Accelerometer',
+    input: 'Input',
   },
   articles: {
     cancelButton: 'Cancelar',

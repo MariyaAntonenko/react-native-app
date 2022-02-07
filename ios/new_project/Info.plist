@@ -35,6 +35,19 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSAppTransportSecurity</key>
+    	<dict>
+    		<key>NSAllowsArbitraryLoads</key>
+    		<true/>
+    		<key>NSExceptionDomains</key>
+    		<dict>
+    			<key>localhost</key>
+    			<dict>
+    				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+    				<true/>
+    			</dict>
+    		</dict>
+    	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera access is required to run the app</string>
 	<key>NSFaceIDUsageDescription</key>
