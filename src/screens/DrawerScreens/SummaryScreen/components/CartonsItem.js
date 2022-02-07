@@ -2,7 +2,7 @@ import React from 'react';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import {StyledButton} from '../../../../common/simpleComponents/Button';
-import Arrow from '../../../../assets/icons/arrow.svg';
+import Arrow from '../../../../assets/icons/arrowRight.svg';
 
 export const CartonsItem = ({data}) => {
   return (
