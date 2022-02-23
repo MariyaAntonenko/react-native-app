@@ -5,11 +5,17 @@ import {Block} from '../../../common/simpleComponents/Block';
 import {StyledButton} from '../../../common/simpleComponents/Button';
 import {readFingerprint} from './components/FingerprintScanner';
 
+export type FingerprintProps = {
+  setFingerColor: (arg0: string) => string;
+  setChecking: (arg0: boolean) => boolean;
+};
+
 export const FingerprintScreen = () => {
-  const [checking, setChecking] = useState(false);
-  const [fingerColor, setFingerColor] = useState('gray');
+  const [checking, setChecking] = useState<boolean>(false);
+  const [fingerColor, setFingerColor] = useState<string>('gray');
+
   const onReadFingerFunction = useCallback(
-    () => readFingerprint({setChecking, setFingerColor}),
+    () => readFingerprint({setChecking, setFingerColor} as FingerprintProps),
     [],
   );
   return (

@@ -254,6 +254,10 @@ export const drawerItemConsts = strings => {
       id: 20,
       label: strings.screens.input,
     },
+    {
+      id: 21,
+      label: strings.screens.formConstructor,
+    },
   ];
 };
 export const loginFormConsts = [

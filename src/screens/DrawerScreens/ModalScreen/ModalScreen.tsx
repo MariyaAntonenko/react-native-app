@@ -7,7 +7,7 @@ import {ModalWindow} from './components/ModalWindow';
 import {StatusBar} from 'react-native';
 
 export const ModalScreen = () => {
-  const [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setModalVisible] = useState<boolean>(false);
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };

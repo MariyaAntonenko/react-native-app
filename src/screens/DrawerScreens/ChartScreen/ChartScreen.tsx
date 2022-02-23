@@ -31,6 +31,7 @@ const chartData = {
 const VictoryZoomVoronoiContainer = createContainer('zoom', 'voronoi');
 
 export const ChartScreen = () => {
+  // @ts-ignore
   return (
     <SafeAreaView flex={1} mt={'50%'}>
       <VictoryChart

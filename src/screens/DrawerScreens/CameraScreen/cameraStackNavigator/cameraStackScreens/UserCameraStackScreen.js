@@ -43,7 +43,6 @@ export const UserCameraStackScreen = props => {
       console.log(error);
     }
   };
-
   useEffect(() => {
     CameraRoll.getPhotos({first: 20})
       .then(res => setPhotos(res.edges))
@@ -56,7 +55,8 @@ export const UserCameraStackScreen = props => {
         ref={cameraRef}
         type={type}
         style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}
-        flashMode={flash}></RNCamera>
+        flashMode={flash}
+      />
       <CameraButtons
         flash={flash}
         captureHandle={captureHandle}

@@ -22,13 +22,14 @@ import {DrawerContent} from './DrawerContent';
 import {strings} from '../../common/complicatedComponents/Context';
 import {AccelerometerScreen} from './AccelerometerScreen/AccelerometerScreen';
 import {InputScreen} from './InputScreen/InputScreen';
+import {FormConstructorScreen} from './FormContructorScreen/FormConstructorScreen';
 
 const Drawer = createDrawerNavigator();
 
 export const DrawerScreens = () => {
   return (
     <Drawer.Navigator
-      initialRouteName={strings.screens.input}
+      initialRouteName={strings.screens.formConstructor}
       drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen
         name={strings.screens.articles}
@@ -128,6 +129,11 @@ export const DrawerScreens = () => {
       <Drawer.Screen
         name={strings.screens.input}
         component={InputScreen}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={strings.screens.formConstructor}
+        component={FormConstructorScreen}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>

@@ -5,7 +5,21 @@ import {StyledText} from '../../../../common/simpleComponents/Text';
 import {StyledButton} from '../../../../common/simpleComponents/Button';
 import {Image} from '../../../../common/simpleComponents/Image';
 
-export const ArticlesItem = ({data}) => {
+type DataProps = {
+  id: number;
+  article: string;
+  color: string;
+  size: string;
+  type: string;
+  img: string;
+  amount: number;
+};
+
+interface ItemData {
+  data: DataProps;
+}
+
+export const ArticlesItem = ({data}: ItemData) => {
   return (
     <Block
       backgroundColor={'white'}

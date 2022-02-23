@@ -1,7 +1,10 @@
-import React from 'react';
 import FingerprintScanner from 'react-native-fingerprint-scanner';
+import {FingerprintProps} from '../FingerprintScreen';
 
-export const readFingerprint = ({setFingerColor, setChecking}) => {
+export const readFingerprint = ({
+  setFingerColor,
+  setChecking,
+}: FingerprintProps) => {
   setFingerColor('blue');
   setChecking(true);
   FingerprintScanner.authenticate({

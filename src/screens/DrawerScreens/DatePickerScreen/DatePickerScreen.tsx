@@ -8,14 +8,28 @@ import SadBabyIcon from '../../../assets/icons/sad-douding.svg';
 import BirthdayCakeIcon from '../../../assets/icons/birthday-cake.svg';
 
 export const DatePickerScreen = () => {
-  const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState(new Date());
-  const [tooYoung, setTooYuong] = useState(false);
-  const [isDisableTimePicker, setDisableTimePicker] = useState(true);
-  const [openDateBirth, setOpenDateBirth] = useState(false);
-  const [openTimeBirth, setOpenTimeBirth] = useState(false);
-  const [isChanged, setChanged] = useState(false);
-  const datePickerConsts = [
+  const [date, setDate] = useState<Date>(new Date());
+  const [time, setTime] = useState<Date>(new Date());
+  const [tooYoung, setTooYuong] = useState<boolean>(false);
+  const [isDisableTimePicker, setDisableTimePicker] = useState<boolean>(true);
+  const [openDateBirth, setOpenDateBirth] = useState<boolean>(false);
+  const [openTimeBirth, setOpenTimeBirth] = useState<boolean>(false);
+  const [isChanged, setChanged] = useState<boolean>(false);
+
+  type DatePickerConstsItemTypes = {
+    id: number;
+    buttonText: string;
+    openPickerState: boolean;
+    date: Date;
+    type: 'date' | 'time' | 'datetime' | undefined;
+    textDate: string;
+    activeButton: boolean;
+    onPickDateFunction: (date: Date) => void;
+    onCancelPicking: () => void;
+    onOpenModal: () => void;
+  };
+
+  const datePickerConsts: DatePickerConstsItemTypes[] = [
     {
       id: 1,
       buttonText: 'Pick your birthday',

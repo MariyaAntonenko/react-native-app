@@ -7,6 +7,7 @@ import CameraRoll from '@react-native-community/cameraroll';
 import {Block} from '../../../common/simpleComponents/Block';
 import {StyledText} from '../../../common/simpleComponents/Text';
 import {StyledButton} from '../../../common/simpleComponents/Button';
+
 export const DownloadScreen = () => {
   const REMOTE_IMAGE_PATH =
     'https://raw.githubusercontent.com/AboutReact/sampleresource/master/gift.png';
@@ -20,6 +21,7 @@ export const DownloadScreen = () => {
           {
             title: 'Storage Permission Required',
             message: 'App needs access to your storage to download Photos',
+            buttonPositive: 'Allow',
           },
         );
         if (granted === PermissionsAndroid.RESULTS.GRANTED) {
@@ -34,9 +36,12 @@ export const DownloadScreen = () => {
   };
   const downloadImage = async () => {
     let date = new Date();
-    let image_URL = REMOTE_IMAGE_PATH;
-    let ext = getExtention(image_URL);
-    ext = '.' + ext[0];
+    let image_URL: string = REMOTE_IMAGE_PATH;
+    let ext: string | RegExpExecArray | null | undefined =
+      getExtention(image_URL);
+    if (ext) {
+      ext = '.' + ext[0];
+    }
     const {config, fs} = RNFetchBlob;
     let PictureDir = fs.dirs.PictureDir;
     let options = {
@@ -58,11 +63,11 @@ export const DownloadScreen = () => {
       console.log(e);
     }
     CameraRoll.save(image_URL)
-      .then(alert('Image Downloaded Successfully.'))
+      .then(() => alert('Image Downloaded Successfully.'))
       .catch(e => {});
   };
 
-  const getExtention = filename => {
+  const getExtention = (filename: string) => {
     return /[.]/.exec(filename) ? /[^.]+$/.exec(filename) : undefined;
   };
 

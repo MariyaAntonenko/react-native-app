@@ -36,6 +36,7 @@ export const Block = styled.View`
   ${({right}) => right && `right: ${right}`};
   ${({bottom}) => bottom && `bottom: ${bottom}`};
   ${({boxShadow}) => boxShadow && `box-shadow: ${boxShadow}`};
+  ${({alignSelf}) => alignSelf && `alignSelf: ${alignSelf}`};
 `;
 
 Block.propTypes = {
@@ -80,4 +81,5 @@ Block.propTypes = {
   pb: string,
   pr: string,
   pl: string,
+  alignSelf: string,
 };

@@ -31,6 +31,7 @@ export const StyledButton = styled.TouchableOpacity`
   ${({left}) => left && `left: ${left}`};
   ${({right}) => right && `right: ${right}`};
   ${({bottom}) => bottom && `bottom: ${bottom}`};
+  ${({alignSelf}) => alignSelf && `alignSelf: ${alignSelf}`};
 `;
 
 StyledButton.propTypes = {
@@ -70,4 +71,5 @@ StyledButton.propTypes = {
   pb: string,
   pr: string,
   pl: string,
+  alignSelf: string,
 };

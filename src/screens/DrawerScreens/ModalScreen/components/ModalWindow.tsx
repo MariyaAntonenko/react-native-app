@@ -5,13 +5,17 @@ import {StyledButton} from '../../../../common/simpleComponents/Button';
 import Cross from '../../../../assets/icons/cross.svg';
 import Modal from 'react-native-modal';
 
-export const ModalWindow = ({isModalVisible, toggleModal}) => {
+interface ModalProps {
+  isModalVisible: boolean;
+  toggleModal: () => void;
+}
+
+export const ModalWindow = ({isModalVisible, toggleModal}: ModalProps) => {
   return (
     <Modal
       onSwipeComplete={toggleModal}
       swipeDirection={['up', 'down']}
-      transparent={true}
-      animationType="slideInUp"
+      animationOut="slideInUp"
       isVisible={isModalVisible}>
       <Block flex={1} alignItems={'center'} justifyContent={'center'}>
         <Block

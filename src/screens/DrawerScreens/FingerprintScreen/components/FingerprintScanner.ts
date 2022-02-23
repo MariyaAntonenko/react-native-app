@@ -1,20 +1,29 @@
-import React from 'react';
 import TouchID from 'react-native-touch-id';
+import {FingerprintProps} from '../FingerprintScreen';
 
-const optionalConfigObject = {
+type ConfigObjectTypes = {
+  fallbackLabel: string;
+  unifiedErrors: boolean;
+  passcodeFallback: boolean;
+};
+
+const optionalConfigObject: ConfigObjectTypes = {
   fallbackLabel: 'Enter Passcode',
   unifiedErrors: false,
   passcodeFallback: true,
 };
-export const readFingerprint = ({setFingerColor, setChecking}) => {
+export const readFingerprint = ({
+  setFingerColor,
+  setChecking,
+}: FingerprintProps) => {
   setFingerColor('blue');
   setChecking(true);
   TouchID.authenticate('', optionalConfigObject)
-    .then(success => {
+    .then(() => {
       setFingerColor('green');
       setChecking(false);
     })
-    .catch(error => {
+    .catch((error: {message: any}) => {
       console.log(error.message);
       setFingerColor('red');
       setChecking(false);

@@ -13,8 +13,13 @@ import {strings} from '../../../common/complicatedComponents/Context';
 
 const footerConsts = footerConstsForArticlesScreen(strings);
 
+export type HookProps = {
+  count: number;
+  isError?: boolean;
+};
+
 export const RandomScreen = () => {
-  const {count, isError} = useCounterIncrementer();
+  const {count, isError}: HookProps = useCounterIncrementer();
   return (
     <Block pt={'10%'} flex={1} backgroundColor={'#013555'}>
       <Header headerConsts={headerConstsForRandomPage} />

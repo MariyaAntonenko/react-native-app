@@ -1,8 +1,8 @@
 import {useEffect, useMemo, useState} from 'react';
 
 export const useCounterIncrementer = () => {
-  const [count, setCount] = useState(0);
-  const [isError, setError] = useState(false);
+  const [count, setCount] = useState<number>(0);
+  const [isError, setError] = useState<boolean>(false);
 
   useEffect(() => {
     const interval = setInterval(() => {

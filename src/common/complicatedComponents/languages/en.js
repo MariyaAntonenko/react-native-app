@@ -20,6 +20,7 @@ export default {
     date: 'Date picker',
     accelerometer: 'Accelerometer',
     input: 'Input',
+    formConstructor: 'Form Construstor',
   },
   articles: {
     cancelButton: 'Cancel',
