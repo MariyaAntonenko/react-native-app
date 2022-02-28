@@ -1,11 +1,11 @@
 import React, {useContext, useMemo, useState} from 'react';
 import {StyledButton} from '../../../../common/simpleComponents/Button';
 import {StyledText} from '../../../../common/simpleComponents/Text';
-import {Input} from '../../../../common/simpleComponents/Input';
 import RemoveFieldIcon from '../../../../assets/icons/remove-46.svg';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {FormContext} from '../FormConstructorScreen';
 import {useNavigation} from '@react-navigation/native';
+import {CustomInput} from '../../../../common/complicatedComponents/CustomInput';
 
 export const CreatorField = ({form}) => {
   const [formName, setFormName] = useState('');
@@ -18,8 +18,7 @@ export const CreatorField = ({form}) => {
   const handleFormName = text => {
     setFormName(text);
   };
-  const handleStorageUpdate = e => {
-    console.log('EVENT', e);
+  const handleStorageUpdate = () => {
     setFormList(prev =>
       prev.map(formData => {
         if (formData.id === form.id) {
@@ -28,17 +27,17 @@ export const CreatorField = ({form}) => {
         return formData;
       }),
     );
-    safeToStorage(formList);
+    safeToStorage(formList, 'form-list');
   };
+
   const removeForm = () => {
     const filteredForm = formList.filter(formItem => formItem.id !== form.id);
     setFormList(filteredForm);
-    safeToStorage(filteredForm);
+    safeToStorage(filteredForm, 'form-list');
   };
-
-  const goToConstructor = id => {
-    safeToStorage(formList);
-    setSelectedForm(formList.find(item => item.id === id));
+  const goToConstructor = () => {
+    setSelectedForm(formList.find(item => item.id === form.id));
+    safeToStorage(formList, 'form-list');
     navigation.navigate('FormConstructor');
   };
 
@@ -46,26 +45,24 @@ export const CreatorField = ({form}) => {
     <Block
       paddingVertical={'50px'}
       marginVertical={'10px'}
-      border={'0.3px solid gray'}
+      border={'1px solid gray'}
       borderRadius={'6px'}>
-      <StyledButton onPress={() => goToConstructor(form.id)}>
+      <StyledButton onPress={goToConstructor}>
         <StyledText color={'gray'} fontSize={'20px'} textAlign={'center'}>
           FORM {index + 1}
         </StyledText>
       </StyledButton>
-      <Input
+      <CustomInput
         autofocus
-        defaultValue={form.title || ''}
+        defaultValue={form.title}
         textAlign={'center'}
         onChangeText={handleFormName}
         paddingHorizontal={'10px'}
         paddingVertical={'10px'}
         marginHorizontal={'10px'}
         marginVertical={'10px'}
-        border={'0.3px solid gray'}
-        // onBlur={handleStorageUpdate}
-        // onPressOut={handleStorageUpdate}
-        onFocus={handleStorageUpdate}
+        border={'1px solid gray'}
+        onBlur={handleStorageUpdate}
       />
       <StyledButton
         onPress={removeForm}

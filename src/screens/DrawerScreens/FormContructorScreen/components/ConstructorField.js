@@ -6,24 +6,28 @@ import {StyledButton} from '../../../../common/simpleComponents/Button';
 import RemoveFieldIcon from '../../../../assets/icons/remove-46.svg';
 import {FormContext} from '../FormConstructorScreen';
 
-export const ConstructorField = ({fieldData, setSelectedFields}) => {
-  const {formList, setFormList, safeToStorage, selectedForm, setSelectedForm} =
-    useContext(FormContext);
+export const ConstructorField = ({fieldData}) => {
+  const {selectedForm, setSelectedForm} = useContext(FormContext);
+
   const handleFieldUpdate = dataKey => text => {
-    setSelectedFields(prev =>
-      prev.map(field => {
+    setSelectedForm({
+      ...selectedForm,
+      fields: selectedForm.fields.map(field => {
         const outputValue = {...field};
-        if (field.id === fieldData.id) {
+        if (field.fieldId === fieldData.fieldId) {
           outputValue[dataKey] = text;
         }
         return outputValue;
       }),
-    );
+    });
   };
   const removeField = () => {
-    setSelectedFields(
-      selectedForm.fields.filter(field => field.id !== fieldData.id),
-    );
+    setSelectedForm({
+      ...selectedForm,
+      fields: selectedForm.fields.filter(
+        field => field.fieldId !== fieldData.fieldId,
+      ),
+    });
   };
 
   return (
@@ -33,7 +37,7 @@ export const ConstructorField = ({fieldData, setSelectedFields}) => {
         <Input
           autoFocus
           value={fieldData.label}
-          border={'0.2px solid gray'}
+          border={'1px solid gray'}
           borderRadius={'6px'}
           paddingVertical={'5px'}
           paddingHorizontal={'5px'}
@@ -45,7 +49,7 @@ export const ConstructorField = ({fieldData, setSelectedFields}) => {
         </StyledText>
         <Input
           value={fieldData.placeholder}
-          border={'0.2px solid gray'}
+          border={'1px solid gray'}
           borderRadius={'6px'}
           paddingVertical={'5px'}
           paddingHorizontal={'5px'}

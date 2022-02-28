@@ -7,31 +7,47 @@ import {FormCreatorStackScreen} from './screens/FormCreatorStackScreen';
 import {SafeAreaView} from '../../../common/simpleComponents/SafeAreaView';
 import {StatusBar} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {clone} from 'lodash';
 
 const Stack = createNativeStackNavigator();
 export const FormContext = React.createContext();
 
 export const FormConstructorScreen = () => {
   const [formList, setFormList] = useState([]);
+  const [filledFormList, setFilledFormList] = useState([]);
   const [selectedForm, setSelectedForm] = useState({});
 
-  const safeToStorage = formData => {
+  const safeToStorage = (formData, key) => {
     let stringFormList = JSON.stringify(formData);
-    AsyncStorage.setItem('form-list', stringFormList);
+    AsyncStorage.setItem(key, stringFormList);
   };
-  const getFromStorage = () => {
+  const getFromStorageFormList = () => {
     return AsyncStorage.getItem('form-list');
   };
+  const getFromStorageFilledFormList = () => {
+    return AsyncStorage.getItem('filled-form-list');
+  };
+  // console.log('NON FILLED FORM LIST>>', formList);
+  // console.log('FILLED FORM LIST >>', filledFormList);
+
   useEffect(() => {
-    getFromStorage().then(res => {
+    getFromStorageFormList().then(res => {
       setFormList((res && JSON.parse(res)) || []);
+    });
+  }, []);
+  useEffect(() => {
+    getFromStorageFilledFormList().then(res => {
+      setFilledFormList((res && JSON.parse(res)) || []);
     });
   }, []);
   const value = useMemo(
     () => ({
       formList,
       setFormList,
-      getFromStorage,
+      // filledFormList,
+      // setFilledFormList,
+      getFromStorageFormList,
+      getFromStorageFilledFormList,
       safeToStorage,
       selectedForm,
       setSelectedForm,
@@ -39,7 +55,10 @@ export const FormConstructorScreen = () => {
     [
       formList,
       setFormList,
-      getFromStorage,
+      // filledFormList,
+      // setFilledFormList,
+      getFromStorageFormList,
+      getFromStorageFilledFormList,
       safeToStorage,
       selectedForm,
       setSelectedForm,

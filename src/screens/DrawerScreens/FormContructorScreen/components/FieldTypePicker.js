@@ -1,22 +1,38 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {Platform} from 'react-native';
 import {Block} from '../../../../common/simpleComponents/Block';
 import RNPickerSelect from 'react-native-picker-select';
 import DropDownIcon from '../../../../assets/icons/drop-down-4.svg';
+import {FormContext} from '../FormConstructorScreen';
 
-export const FieldTypePicker = ({selectedFormType, setSelectedFormType}) => {
+export const FieldTypePicker = ({fieldData}) => {
+  const {selectedForm, setSelectedForm} = useContext(FormContext);
+  const handleType = itemValue => {
+    setSelectedForm({
+      ...selectedForm,
+      fields: selectedForm.fields.map(field => {
+        const outputValue = {...field};
+        if (field.fieldId === fieldData.fieldId) {
+          outputValue.type = itemValue;
+        }
+        return outputValue;
+      }),
+    });
+  };
+
   return (
     <Block
       width={'70%'}
       justifyContent={'center'}
-      alignItems={'center'}
       paddingHorizontal={'5px'}
-      paddingVertical={'10px'}
+      paddingVertical={Platform.OS === 'ios' ? '10px' : '5px'}
       marginVertical={'5px'}
       marginHorizontal={'10px'}
       border={'1px solid #14C4AF'}
       borderRadius={'6px'}>
       <RNPickerSelect
         placeholder={{}}
+        useNativeAndroidPickerStyle={false}
         style={{
           inputAndroid: {
             backgroundColor: 'transparent',
@@ -27,17 +43,15 @@ export const FieldTypePicker = ({selectedFormType, setSelectedFormType}) => {
             color: '#14C4AF',
           },
           iconContainer: {
-            top: 0,
+            top: Platform.OS === 'ios' ? 0 : 15,
             right: 0,
           },
         }}
         Icon={() => (
           <DropDownIcon width={'20px'} height={'20px'} fill={'#14C4AF'} />
         )}
-        selectedValue={selectedFormType}
-        onValueChange={itemValue => {
-          setSelectedFormType(itemValue);
-        }}
+        value={fieldData.type}
+        onValueChange={handleType}
         items={[
           {label: 'Username', value: 'username'},
           {label: 'Email', value: 'emailAddress'},

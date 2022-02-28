@@ -12,14 +12,10 @@ import {CreatorField} from '../components/CreatorField';
 
 export const FormCreatorStackScreen = () => {
   const {formList, setFormList, safeToStorage} = useContext(FormContext);
-
-  console.log('FORMLIST CREATOR>>', formList);
-
   const addForm = () => {
     setFormList([...formList, {id: Date.now(), fields: []}]);
-    safeToStorage(formList);
+    safeToStorage(formList, 'form-list');
   };
-
   return (
     <SafeAreaView flex={1}>
       <StyledText
@@ -34,15 +30,16 @@ export const FormCreatorStackScreen = () => {
         flex={1}>
         <Block
           flex={1}
-          border={'0.5px solid gray'}
+          border={'1px solid gray'}
           marginHorizontal={'20px'}
+          marginVertical={'5px'}
           paddingHorizontal={'10px'}
           paddingVertical={'10px'}
           borderRadius={'6px'}>
           <StyledButton onPress={addForm} width={'50px'}>
             <PlusIcon width={'30px'} height={'30px'} fill={'#f078cc'} />
           </StyledButton>
-          <StyledScrollView>
+          <StyledScrollView showsVerticalScrollIndicator={false}>
             {formList.map(form => (
               <CreatorField key={form.id} form={form} />
             ))}
