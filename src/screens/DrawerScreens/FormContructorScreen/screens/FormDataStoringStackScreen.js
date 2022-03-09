@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {SafeAreaView} from '../../../../common/simpleComponents/SafeAreaView';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import {useNavigation} from '@react-navigation/native';
@@ -8,19 +8,17 @@ import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledScrollView} from '../../../../common/simpleComponents/StyledScrollView';
 import {FormButton} from '../components/FormButton';
 import {DataStoringField} from '../components/DataStoringField';
-import {FormContext} from '../FormConstructorScreen';
+import {useSelector} from 'react-redux';
 
 export const FormDataStoringStackScreen = () => {
-  const {selectedForm, formList, safeToStorage} = useContext(FormContext);
+  const {selectedForm} = useSelector(s => s.formListReducer);
 
   const navigation = useNavigation();
 
   const onBackToConstructor = () => {
-    safeToStorage(formList, 'form-list');
     navigation.goBack();
   };
   const onBackToMain = () => {
-    safeToStorage(formList, 'form-list');
     navigation.replace('FormCreator');
   };
 

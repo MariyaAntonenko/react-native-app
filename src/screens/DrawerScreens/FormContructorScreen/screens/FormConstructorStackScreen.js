@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import {Platform} from 'react-native';
@@ -9,50 +9,27 @@ import {StyledScrollView} from '../../../../common/simpleComponents/StyledScroll
 import {StyledKeyboardAvoidingView} from '../../../../common/simpleComponents/KeyboardAvoidingView';
 import {ConstructorField} from '../components/ConstructorField';
 import {FormButton} from '../components/FormButton';
-import {FormContext} from '../FormConstructorScreen';
 import {FieldTypePicker} from '../components/FieldTypePicker';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  addField,
+  setFormListWithSelectedForm,
+} from '../../../../../store/actions/actions';
 
 export const FormConstructorStackScreen = () => {
+  const {selectedForm} = useSelector(s => s.formListReducer);
+  const dispatch = useDispatch();
   const navigation = useNavigation();
-  const {formList, setFormList, safeToStorage, selectedForm, setSelectedForm} =
-    useContext(FormContext);
 
-  const addField = () => {
-    setSelectedForm({
-      ...selectedForm,
-      fields: [
-        ...selectedForm.fields,
-        {
-          label: '',
-          placeholder: '',
-          type: 'username',
-          fieldId: Date.now(),
-        },
-      ],
-    });
+  const addNewField = () => {
+    dispatch(addField());
   };
   const onBuildForm = () => {
-    setFormList(
-      formList.map(form => {
-        if (form.id === selectedForm.id) {
-          return selectedForm;
-        }
-        return form;
-      }),
-    );
-    safeToStorage(formList, 'form-list');
+    dispatch(setFormListWithSelectedForm(selectedForm));
     navigation.navigate('FormDataStoring');
   };
   const goBackCreator = () => {
-    setFormList(
-      formList.map(form => {
-        if (form.id === selectedForm.id) {
-          return selectedForm;
-        }
-        return form;
-      }),
-    );
-    safeToStorage(formList, 'form-list');
+    dispatch(setFormListWithSelectedForm(selectedForm));
     navigation.goBack();
   };
 
@@ -78,7 +55,7 @@ export const FormConstructorStackScreen = () => {
           marginHorizontal={'20px'}
           borderRadius={'6px'}>
           <StyledButton
-            onPress={addField}
+            onPress={addNewField}
             paddingVertical={'10px'}
             paddingHorizontal={'10px'}>
             <PlusIcon width={'30px'} height={'30px'} fill={'#14C4AF'} />

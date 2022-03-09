@@ -1,23 +1,15 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Platform} from 'react-native';
 import {Block} from '../../../../common/simpleComponents/Block';
 import RNPickerSelect from 'react-native-picker-select';
 import DropDownIcon from '../../../../assets/icons/drop-down-4.svg';
-import {FormContext} from '../FormConstructorScreen';
+import {useDispatch} from 'react-redux';
+import {addFieldType} from '../../../../../store/actions/actions';
 
 export const FieldTypePicker = ({fieldData}) => {
-  const {selectedForm, setSelectedForm} = useContext(FormContext);
+  const dispatch = useDispatch();
   const handleType = itemValue => {
-    setSelectedForm({
-      ...selectedForm,
-      fields: selectedForm.fields.map(field => {
-        const outputValue = {...field};
-        if (field.fieldId === fieldData.fieldId) {
-          outputValue.type = itemValue;
-        }
-        return outputValue;
-      }),
-    });
+    dispatch(addFieldType(itemValue, fieldData.fieldId));
   };
 
   return (

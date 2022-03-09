@@ -1,17 +1,22 @@
-import React, {useContext, useMemo, useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {StyledButton} from '../../../../common/simpleComponents/Button';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import RemoveFieldIcon from '../../../../assets/icons/remove-46.svg';
 import {Block} from '../../../../common/simpleComponents/Block';
-import {FormContext} from '../FormConstructorScreen';
 import {useNavigation} from '@react-navigation/native';
 import {CustomInput} from '../../../../common/complicatedComponents/CustomInput';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  saveFormList,
+  setSelectedForm,
+} from '../../../../../store/actions/actions';
 
 export const CreatorField = ({form}) => {
+  const dispatch = useDispatch();
   const [formName, setFormName] = useState('');
   const navigation = useNavigation();
-  const {formList, setFormList, safeToStorage, setSelectedForm} =
-    useContext(FormContext);
+  const {formList} = useSelector(s => s.formListReducer);
+
   const index = useMemo(() => {
     return formList.findIndex(formItem => formItem.id === form.id);
   }, [formList]);
@@ -19,25 +24,21 @@ export const CreatorField = ({form}) => {
     setFormName(text);
   };
   const handleStorageUpdate = () => {
-    setFormList(prev =>
-      prev.map(formData => {
-        if (formData.id === form.id) {
-          return {...formData, title: formName};
-        }
-        return formData;
-      }),
-    );
-    safeToStorage(formList, 'form-list');
+    const formListWithTitle = formList.map(formData => {
+      if (formData.id === form.id) {
+        return {...formData, title: formName};
+      }
+      return formData;
+    });
+    dispatch(saveFormList(formListWithTitle, 'form-list'));
   };
-
   const removeForm = () => {
     const filteredForm = formList.filter(formItem => formItem.id !== form.id);
-    setFormList(filteredForm);
-    safeToStorage(filteredForm, 'form-list');
+    dispatch(saveFormList(filteredForm, 'form-list'));
   };
   const goToConstructor = () => {
-    setSelectedForm(formList.find(item => item.id === form.id));
-    safeToStorage(formList, 'form-list');
+    dispatch(setSelectedForm(form.id));
+    dispatch(saveFormList(formList, 'form-list'));
     navigation.navigate('FormConstructor');
   };
 

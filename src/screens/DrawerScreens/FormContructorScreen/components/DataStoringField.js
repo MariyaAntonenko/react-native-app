@@ -1,12 +1,14 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {set, clone} from 'lodash';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import {Input} from '../../../../common/simpleComponents/Input';
-import {FormContext} from '../FormConstructorScreen';
+import {useDispatch, useSelector} from 'react-redux';
+import {saveFormList} from '../../../../../store/actions/actions';
 
 export const DataStoringField = ({input}) => {
-  const {safeToStorage, selectedForm, formList} = useContext(FormContext);
+  const dispatch = useDispatch();
+  const {formList, selectedForm} = useSelector(s => s.formListReducer);
   let cloneOfFormList = clone(formList);
   let cloneOfSelectedForm = cloneOfFormList.find(
     form => form.id === selectedForm.id,
@@ -18,7 +20,7 @@ export const DataStoringField = ({input}) => {
 
   const handleFieldContent = text => {
     set(cloneOfField, pathToFieldData, text);
-    safeToStorage(cloneOfFormList, 'filled-form-list');
+    dispatch(saveFormList(cloneOfFormList, 'filled-form-list'));
   };
 
   return (

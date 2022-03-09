@@ -1,5 +1,4 @@
-import React, {useContext} from 'react';
-import {FormContext} from '../FormConstructorScreen';
+import React from 'react';
 import {SafeAreaView} from '../../../../common/simpleComponents/SafeAreaView';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import {Platform} from 'react-native';
@@ -9,12 +8,15 @@ import {StyledKeyboardAvoidingView} from '../../../../common/simpleComponents/Ke
 import {StyledScrollView} from '../../../../common/simpleComponents/StyledScrollView';
 import {StyledButton} from '../../../../common/simpleComponents/Button';
 import {CreatorField} from '../components/CreatorField';
+import {useSelector, useDispatch} from 'react-redux';
+import {addForm} from '../../../../../store/actions/actions';
 
 export const FormCreatorStackScreen = () => {
-  const {formList, setFormList, safeToStorage} = useContext(FormContext);
-  const addForm = () => {
-    setFormList([...formList, {id: Date.now(), fields: []}]);
-    safeToStorage(formList, 'form-list');
+  const {formList} = useSelector(s => s.formListReducer);
+  const dispatch = useDispatch();
+
+  const addNewForm = () => {
+    dispatch(addForm());
   };
   return (
     <SafeAreaView flex={1}>
@@ -36,7 +38,7 @@ export const FormCreatorStackScreen = () => {
           paddingHorizontal={'10px'}
           paddingVertical={'10px'}
           borderRadius={'6px'}>
-          <StyledButton onPress={addForm} width={'50px'}>
+          <StyledButton onPress={addNewForm} width={'50px'}>
             <PlusIcon width={'30px'} height={'30px'} fill={'#f078cc'} />
           </StyledButton>
           <StyledScrollView showsVerticalScrollIndicator={false}>
