@@ -27,7 +27,7 @@ export const LoginFormElem = ({
         mt={marginTop}
         borderBottomWidth={'1px'}
         borderBottomColor={'#D1D1D1'}
-        pb={'2%'}>
+        pb={'10px'}>
         <StyledText color={'#D1D1D1'} fontSize={'15px'}>
           {label.toUpperCase()}
         </StyledText>
@@ -41,7 +41,7 @@ export const LoginFormElem = ({
               onChangeText={handleChange(label)}
               onBlur={handleBlur(label)}
               value={values[label]}
-              mt={'7%'}
+              mt={'25px'}
               fontSize={'15px'}
               width={'90%'}
               secureTextEntry={issSecureEntry}
@@ -67,7 +67,7 @@ export const LoginFormElem = ({
             onChangeText={handleChange(label)}
             onBlur={handleBlur(label)}
             value={values[label]}
-            mt={'7%'}
+            mt={'25px'}
             fontSize={'15px'}
           />
         )}
@@ -75,7 +75,7 @@ export const LoginFormElem = ({
       {errors[label] &&
         touched[label] &&
         (isPassword ? (
-          <Block mt={'1%'}>
+          <Block mt={'5px'}>
             {currentErrors.map((err, idx) => {
               return (
                 <StyledText
@@ -87,7 +87,7 @@ export const LoginFormElem = ({
             })}
           </Block>
         ) : (
-          <Block flex={1} mt={'1%'}>
+          <Block mt={'5px'}>
             <StyledText color={'red'}>{errors[label]}</StyledText>
           </Block>
         ))}

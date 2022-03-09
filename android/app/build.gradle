@@ -1,5 +1,27 @@
 apply plugin: "com.android.application"
+apply plugin: 'ly.img.android.sdk'  //added
+apply plugin: 'kotlin-android' //added
 
+imglyConfig {
+    modules {
+        include 'ui:text'
+        include 'ui:focus'
+        include 'ui:frame'
+        include 'ui:brush'
+        include 'ui:filter'
+        include 'ui:sticker'
+        include 'ui:overlay'
+        include 'ui:transform'
+        include 'ui:adjustment'
+        include 'ui:text-design'
+        include 'assets:frame-basic'
+        include 'assets:filter-basic'
+        include 'assets:overlay-basic'
+        include 'assets:sticker-shapes'
+        include 'assets:sticker-emoticons'
+        include 'backend:sticker-smart'
+    }
+}  // added all under first line (android plugin)
 import com.android.build.OutputFile
 
 /**
@@ -16,7 +38,7 @@ import com.android.build.OutputFile
  *   bundleAssetName: "index.android.bundle",
  *
  *   // the entry file for bundle generation. If none specified and
- *   // "index.android.js" exists, it will be used. Otherwise "index.js" is
+ *   // "index.android.js" exists, it will be used. Otherwise "store.js" is
  *   // default. Can be overridden with ENTRY_FILE environment variable.
  *   entryFile: "index.android.js",
  *
@@ -78,7 +100,7 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    enableHermes: false,  // clean and rebuild if changing
+    enableHermes: true,  // clean and rebuild if changing
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -136,6 +158,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        missingDimensionStrategy 'react-native-camera', 'general'
+        multiDexEnabled true
+        missingDimensionStrategy 'react-native-camera', 'general'
     }
     splits {
         abi {
@@ -194,6 +219,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    implementation 'com.android.support:multidex:2.0.1'
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
