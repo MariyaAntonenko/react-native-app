@@ -1,5 +1,5 @@
 import React from 'react';
-import {set, clone} from 'lodash';
+import {set, cloneDeep} from 'lodash';
 import {Block} from '../../../../common/simpleComponents/Block';
 import {StyledText} from '../../../../common/simpleComponents/Text';
 import {Input} from '../../../../common/simpleComponents/Input';
@@ -9,7 +9,7 @@ import {saveFormList} from '../../../../../store/actions/actions';
 export const DataStoringField = ({input}) => {
   const dispatch = useDispatch();
   const {formList, selectedForm} = useSelector(s => s.formListReducer);
-  let cloneOfFormList = clone(formList);
+  let cloneOfFormList = cloneDeep(formList);
   let cloneOfSelectedForm = cloneOfFormList.find(
     form => form.id === selectedForm.id,
   );
